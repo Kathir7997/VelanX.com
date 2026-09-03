@@ -73,11 +73,11 @@
 
   /* Gradient Text */
   .gradient-text {
-    @apply bg-gradient-to-r from-primary-400 via-accent-400 to-primary-300 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary-400 via-accent-400 to-primary-300 bg-clip-text text-transparent pb-1;
   }
 
   .gradient-text-primary {
-    @apply bg-gradient-to-r from-primary-300 to-primary-500 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary-300 to-primary-500 bg-clip-text text-transparent pb-1;
   }
 
   /* Buttons */

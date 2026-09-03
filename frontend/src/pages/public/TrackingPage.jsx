@@ -50,7 +50,7 @@ export default function TrackingPage() {
               <Search size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500" />
               <input
                 id="public-tracking-input"
-                className="input-field pl-11 bg-transparent border-0 focus:border-0"
+                className="input-field pl-11 bg-transparent border-0 focus:border-0 text-white placeholder-gray-400"
                 placeholder="Enter tracking number (e.g., VLX-ABC123-XY12)"
                 value={trackId}
                 onChange={(e) => setTrackId(e.target.value)}
