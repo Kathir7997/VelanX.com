@@ -20,7 +20,10 @@ app.use(helmet());
 
 // CORS
 app.use(cors({
-  origin: [process.env.CLIENT_URL, 'http://localhost:5173', 'http://localhost:5174', 'http://localhost:5175'],
+  origin: function (origin, callback) {
+    // Allow all origins dynamically (solves Vercel/Render connection issues)
+    callback(null, true);
+  },
   credentials: true,
 }));
 
