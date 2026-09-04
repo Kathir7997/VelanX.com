@@ -7,7 +7,6 @@ import {
   Globe, TrendingUp, Layers, Navigation, PackageCheck, DollarSign,
   Play, ArrowUpRight, Activity, Bell, Search,
 } from 'lucide-react';
-import SpatialBackground from '../../components/layout/SpatialBackground';
 
 // ─── Animated Counter ───────────────────────────────────────────
 function AnimatedCounter({ target, suffix = '', prefix = '' }) {
@@ -299,7 +298,6 @@ export default function LandingPage() {
 
   return (
     <div className="overflow-hidden relative">
-      <SpatialBackground role="landing" />
       {/* ── HERO ─────────────────────────────────────────────────── */}
       <section className="relative min-h-screen flex items-center pt-24 pb-16 px-6">
         {/* Removed opaque grid-bg and glow orbs to let SpatialBackground shine through */}

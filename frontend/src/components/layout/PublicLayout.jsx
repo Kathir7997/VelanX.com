@@ -1,18 +1,18 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import SpatialBackground from './SpatialBackground';
 
 
 
 export default function PublicLayout() {
+  const location = useLocation();
+  const isLanding = location.pathname === '/';
+
   return (
     <div className="min-h-screen flex flex-col relative overflow-hidden">
-      {/* 
-        SpatialBackground has been moved to individual pages like LandingPage
-        to ensure page-specific backgrounds.
-      */}
-
+      <SpatialBackground role={isLanding ? 'landing' : 'default'} />
       <Navbar />
       <main className="flex-1 relative z-10">
         <Outlet />
