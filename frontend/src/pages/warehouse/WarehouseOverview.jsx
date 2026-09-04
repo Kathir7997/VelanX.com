@@ -36,17 +36,17 @@ export default function WarehouseOverview() {
           <motion.div key={label} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.07 }} className="stat-card">
             <div className={`w-10 h-10 rounded-xl flex items-center justify-center border ${bg}`}><Icon size={18} className={color} /></div>
             <div>
-              <p className="text-2xl font-display font-bold text-white">{value}</p>
-              <p className="text-gray-400 text-sm">{label}</p>
+              <p className="text-2xl font-display font-bold text-gray-900">{value}</p>
+              <p className="text-gray-700 text-sm">{label}</p>
             </div>
           </motion.div>
         ))}
       </div>
       {/* Warehouse List */}
       <div className="glass-card overflow-hidden">
-        <div className="p-6 border-b border-white/10"><h2 className="text-white font-semibold">Warehouses</h2></div>
+        <div className="p-6 border-b border-black/10"><h2 className="text-gray-900 font-semibold">Warehouses</h2></div>
         {(warehouses || []).length === 0 ? (
-          <div className="p-12 text-center"><Warehouse size={40} className="text-gray-600 mx-auto mb-3" /><p className="text-gray-400">No warehouses assigned</p></div>
+          <div className="p-12 text-center"><Warehouse size={40} className="text-gray-600 mx-auto mb-3" /><p className="text-gray-700">No warehouses assigned</p></div>
         ) : (
           <div className="table-wrapper">
             <table className="data-table">
@@ -54,15 +54,15 @@ export default function WarehouseOverview() {
               <tbody>
                 {(warehouses || []).map((w) => (
                   <tr key={w._id}>
-                    <td className="text-white font-medium">{w.warehouseName}</td>
+                    <td className="text-gray-900 font-medium">{w.warehouseName}</td>
                     <td>{w.location?.city}, {w.location?.state}</td>
                     <td>{w.capacity}</td>
                     <td>
                       <div className="flex items-center gap-2">
-                        <div className="w-24 h-1.5 bg-white/10 rounded-full overflow-hidden">
+                        <div className="w-24 h-1.5 bg-black/5 rounded-full overflow-hidden">
                           <div className="h-full bg-primary-500 rounded-full" style={{ width: `${Math.min(100, (w.currentLoad / w.capacity) * 100)}%` }} />
                         </div>
-                        <span className="text-xs text-gray-400">{w.currentLoad}/{w.capacity}</span>
+                        <span className="text-xs text-gray-700">{w.currentLoad}/{w.capacity}</span>
                       </div>
                     </td>
                     <td><span className={w.status === 'active' ? 'badge-success' : 'badge-warning'}>{w.status}</span></td>

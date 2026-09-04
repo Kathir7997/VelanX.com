@@ -43,11 +43,11 @@ export default function IncomingShipments() {
       </div>
 
       {isLoading ? (
-        <div className="glass-card p-12 text-center text-gray-500">Loading...</div>
+        <div className="glass-card p-12 text-center text-gray-800">Loading...</div>
       ) : shipments.length === 0 ? (
         <div className="glass-card p-12 text-center">
           <ArrowDown size={40} className="text-gray-600 mx-auto mb-3" />
-          <p className="text-gray-400">No incoming shipments</p>
+          <p className="text-gray-700">No incoming shipments</p>
         </div>
       ) : (
         <div className="space-y-4">
@@ -56,8 +56,8 @@ export default function IncomingShipments() {
               <div className="flex items-start justify-between gap-4">
                 <div>
                   <span className="font-mono text-primary-400 text-xs">{s.trackingNumber}</span>
-                  <h3 className="text-white font-semibold">{s.materialName}</h3>
-                  <p className="text-gray-400 text-sm">{s.materialWeight} kg · From {s.pickupAddress?.city}</p>
+                  <h3 className="text-gray-900 font-semibold">{s.materialName}</h3>
+                  <p className="text-gray-700 text-sm">{s.materialWeight} kg · From {s.pickupAddress?.city}</p>
                 </div>
                 <span className="badge-warning">{s.status.replace(/_/g, ' ')}</span>
               </div>

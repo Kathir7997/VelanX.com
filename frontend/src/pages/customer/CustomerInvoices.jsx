@@ -61,11 +61,11 @@ Thank you for choosing VelanX!
       </div>
 
       {isLoading ? (
-        <div className="glass-card p-12 text-center text-gray-500">Loading...</div>
+        <div className="glass-card p-12 text-center text-gray-800">Loading...</div>
       ) : shipments.length === 0 ? (
         <div className="glass-card p-12 text-center">
           <FileText size={40} className="text-gray-600 mx-auto mb-3" />
-          <p className="text-gray-400">No invoices available yet</p>
+          <p className="text-gray-700">No invoices available yet</p>
         </div>
       ) : (
         <div className="glass-card overflow-hidden">
@@ -84,9 +84,9 @@ Thank you for choosing VelanX!
               {shipments.map((s) => (
                 <tr key={s._id}>
                   <td><span className="font-mono text-primary-400 text-xs">{s.trackingNumber}</span></td>
-                  <td className="text-white">{s.materialName}</td>
-                  <td className="text-gray-400 text-xs">{s.pickupAddress?.city} → {s.deliveryAddress?.city}</td>
-                  <td className="text-white font-semibold">₹{s.pricing?.total || 0}</td>
+                  <td className="text-gray-900">{s.materialName}</td>
+                  <td className="text-gray-700 text-xs">{s.pickupAddress?.city} → {s.deliveryAddress?.city}</td>
+                  <td className="text-gray-900 font-semibold">₹{s.pricing?.total || 0}</td>
                   <td>{format(new Date(s.createdAt), 'dd MMM yyyy')}</td>
                   <td>
                     <button

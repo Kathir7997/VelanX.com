@@ -29,14 +29,14 @@ export default function ContactPage() {
       <div className="container-max mx-auto">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-16">
           <h1 className="text-5xl font-display font-black mb-4">Get in <span className="gradient-text">Touch</span></h1>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">Have questions about VelanX? We're here to help you optimize your logistics.</p>
+          <p className="text-gray-700 text-lg max-w-2xl mx-auto">Have questions about VelanX? We're here to help you optimize your logistics.</p>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
           {/* Contact Info */}
           <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.1 }}>
-            <h2 className="text-2xl font-display font-bold text-white mb-6">Contact Information</h2>
-            <p className="text-gray-400 mb-8 leading-relaxed">Whether you're looking for enterprise pricing, technical support, or just want to learn more about our platform, our team is ready to assist you.</p>
+            <h2 className="text-2xl font-display font-bold text-gray-900 mb-6">Contact Information</h2>
+            <p className="text-gray-700 mb-8 leading-relaxed">Whether you're looking for enterprise pricing, technical support, or just want to learn more about our platform, our team is ready to assist you.</p>
 
             <div className="space-y-6">
               {[
@@ -49,23 +49,23 @@ export default function ContactPage() {
                     <Icon size={20} className={color} />
                   </div>
                   <div>
-                    <h3 className="text-white font-semibold mb-1">{label}</h3>
-                    <p className="text-gray-400">{value}</p>
+                    <h3 className="text-gray-900 font-semibold mb-1">{label}</h3>
+                    <p className="text-gray-700">{value}</p>
                   </div>
                 </div>
               ))}
             </div>
 
             <div className="mt-12 glass-card p-6 border-l-4 border-l-primary-500">
-              <h4 className="text-white font-semibold mb-2">Support Hours</h4>
-              <p className="text-gray-400 text-sm">Monday – Friday: 9:00 AM – 6:00 PM (IST)</p>
-              <p className="text-gray-400 text-sm mt-1">Weekend support available for Enterprise customers.</p>
+              <h4 className="text-gray-900 font-semibold mb-2">Support Hours</h4>
+              <p className="text-gray-700 text-sm">Monday – Friday: 9:00 AM – 6:00 PM (IST)</p>
+              <p className="text-gray-700 text-sm mt-1">Weekend support available for Enterprise customers.</p>
             </div>
           </motion.div>
 
           {/* Contact Form */}
           <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.2 }} className="glass-card p-8">
-            <h2 className="text-2xl font-display font-bold text-white mb-6">Send a Message</h2>
+            <h2 className="text-2xl font-display font-bold text-gray-900 mb-6">Send a Message</h2>
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
               <div className="grid md:grid-cols-2 gap-5">
                 <div>

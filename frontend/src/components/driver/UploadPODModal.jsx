@@ -90,10 +90,10 @@ export default function UploadPODModal({ shipmentId, onClose }) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
-      <div className="bg-dark-900 border border-dark-700 rounded-2xl w-full max-w-lg overflow-hidden flex flex-col max-h-[90vh]">
-        <div className="p-4 border-b border-dark-700 flex justify-between items-center bg-dark-800">
-          <h2 className="text-lg font-semibold text-white">Upload Proof of Delivery</h2>
-          <button onClick={onClose} className="text-gray-400 hover:text-white transition-colors">
+      <div className="bg-gray-100 border border-dark-700 rounded-2xl w-full max-w-lg overflow-hidden flex flex-col max-h-[90vh]">
+        <div className="p-4 border-b border-dark-700 flex justify-between items-center bg-gray-200">
+          <h2 className="text-lg font-semibold text-gray-900">Upload Proof of Delivery</h2>
+          <button onClick={onClose} className="text-gray-700 hover:text-gray-900 transition-colors">
             <X size={20} />
           </button>
         </div>
@@ -103,7 +103,7 @@ export default function UploadPODModal({ shipmentId, onClose }) {
             
             {/* Product Photo */}
             <div>
-              <label className="block text-sm font-medium text-gray-300 mb-2">Product Photo</label>
+              <label className="block text-sm font-medium text-gray-700 mb-2">Product Photo</label>
               <div className="flex items-center justify-center w-full">
                 {productPhoto ? (
                   <div className="relative w-full h-48 rounded-xl overflow-hidden group">
@@ -113,10 +113,10 @@ export default function UploadPODModal({ shipmentId, onClose }) {
                     </div>
                   </div>
                 ) : (
-                  <label className="flex flex-col items-center justify-center w-full h-48 border-2 border-dark-600 border-dashed rounded-xl cursor-pointer hover:bg-dark-800 transition-colors">
+                  <label className="flex flex-col items-center justify-center w-full h-48 border-2 border-dark-600 border-dashed rounded-xl cursor-pointer hover:bg-gray-200 transition-colors">
                     <div className="flex flex-col items-center justify-center pt-5 pb-6">
-                      <Camera className="w-8 h-8 mb-3 text-gray-400" />
-                      <p className="mb-2 text-sm text-gray-400"><span className="font-semibold text-primary-400">Click to upload</span> or take photo</p>
+                      <Camera className="w-8 h-8 mb-3 text-gray-700" />
+                      <p className="mb-2 text-sm text-gray-700"><span className="font-semibold text-primary-400">Click to upload</span> or take photo</p>
                     </div>
                     <input type="file" accept="image/*" capture="environment" className="hidden" onChange={handlePhotoUpload} />
                   </label>
@@ -127,7 +127,7 @@ export default function UploadPODModal({ shipmentId, onClose }) {
             {/* Receiver Signature */}
             <div>
               <div className="flex justify-between items-end mb-2">
-                <label className="block text-sm font-medium text-gray-300">Receiver Signature</label>
+                <label className="block text-sm font-medium text-gray-700">Receiver Signature</label>
                 <button type="button" onClick={clearSignature} className="text-xs text-red-400 hover:text-red-300">Clear</button>
               </div>
               <div className="bg-white rounded-xl overflow-hidden border border-dark-600">
@@ -156,7 +156,7 @@ export default function UploadPODModal({ shipmentId, onClose }) {
 
             {/* OTP Verification */}
             <div>
-              <label className="block text-sm font-medium text-gray-300 mb-2">Receiver OTP (Optional)</label>
+              <label className="block text-sm font-medium text-gray-700 mb-2">Receiver OTP (Optional)</label>
               <input
                 type="text"
                 value={otp}

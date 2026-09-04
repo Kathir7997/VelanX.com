@@ -44,7 +44,7 @@ export default function CustomerTracking() {
       <div className="glass-card p-6 mb-6">
         <div className="flex gap-3">
           <div className="relative flex-1">
-            <Search size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-500" />
+            <Search size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-800" />
             <input
               id="tracking-search"
               className="input-field pl-10"
@@ -65,14 +65,14 @@ export default function CustomerTracking() {
       </div>
 
       {isLoading && (
-        <div className="glass-card p-12 text-center text-gray-500">Searching for shipment...</div>
+        <div className="glass-card p-12 text-center text-gray-800">Searching for shipment...</div>
       )}
 
       {error && (
         <div className="glass-card p-12 text-center">
           <XCircle size={40} className="text-red-400 mx-auto mb-3" />
-          <p className="text-white font-medium">Shipment Not Found</p>
-          <p className="text-gray-400 text-sm mt-1">Please check the tracking number and try again</p>
+          <p className="text-gray-900 font-medium">Shipment Not Found</p>
+          <p className="text-gray-700 text-sm mt-1">Please check the tracking number and try again</p>
         </div>
       )}
 
@@ -82,7 +82,7 @@ export default function CustomerTracking() {
           <div className="glass-card p-6">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
               <div>
-                <p className="text-gray-400 text-sm">Tracking Number</p>
+                <p className="text-gray-700 text-sm">Tracking Number</p>
                 <p className="font-mono text-primary-400 text-xl font-bold">{shipment.trackingNumber}</p>
               </div>
               <span className={`badge badge-${shipment.status === 'delivery_confirmed' ? 'success' : shipment.status === 'cancelled' ? 'error' : 'warning'} text-sm`}>
@@ -91,23 +91,23 @@ export default function CustomerTracking() {
             </div>
             <div className="grid md:grid-cols-3 gap-4 text-sm">
               <div>
-                <p className="text-gray-500">Material</p>
-                <p className="text-white font-medium">{shipment.materialName}</p>
+                <p className="text-gray-800">Material</p>
+                <p className="text-gray-900 font-medium">{shipment.materialName}</p>
               </div>
               <div>
-                <p className="text-gray-500">From</p>
-                <p className="text-white">{shipment.pickupAddress?.city}, {shipment.pickupAddress?.state}</p>
+                <p className="text-gray-800">From</p>
+                <p className="text-gray-900">{shipment.pickupAddress?.city}, {shipment.pickupAddress?.state}</p>
               </div>
               <div>
-                <p className="text-gray-500">To</p>
-                <p className="text-white">{shipment.deliveryAddress?.city}, {shipment.deliveryAddress?.state}</p>
+                <p className="text-gray-800">To</p>
+                <p className="text-gray-900">{shipment.deliveryAddress?.city}, {shipment.deliveryAddress?.state}</p>
               </div>
             </div>
           </div>
 
           {/* Progress Timeline */}
           <div className="glass-card p-6">
-            <h3 className="text-white font-semibold mb-6">Delivery Progress</h3>
+            <h3 className="text-gray-900 font-semibold mb-6">Delivery Progress</h3>
             <div className="relative">
               {STATUS_STEPS.map(({ key, label, icon: Icon }, i) => {
                 const isCompleted = i <= currentStepIndex;
@@ -116,16 +116,16 @@ export default function CustomerTracking() {
                   <div key={key} className="flex items-start gap-4 mb-6 last:mb-0">
                     <div className="flex flex-col items-center">
                       <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all ${
-                        isCompleted ? 'bg-primary-500 shadow-glow-primary' : 'bg-dark-800 border border-white/15'
+                        isCompleted ? 'bg-primary-500 shadow-glow-primary' : 'bg-gray-200 border border-black/10'
                       }`}>
-                        <Icon size={18} className={isCompleted ? 'text-white' : 'text-gray-600'} />
+                        <Icon size={18} className={isCompleted ? 'text-gray-900' : 'text-gray-600'} />
                       </div>
                       {i < STATUS_STEPS.length - 1 && (
-                        <div className={`w-0.5 flex-1 mt-1 min-h-[24px] ${isCompleted ? 'bg-primary-500' : 'bg-white/10'}`} />
+                        <div className={`w-0.5 flex-1 mt-1 min-h-[24px] ${isCompleted ? 'bg-primary-500' : 'bg-black/5'}`} />
                       )}
                     </div>
                     <div className="pt-2">
-                      <p className={`font-medium ${isCompleted ? 'text-white' : 'text-gray-600'}`}>{label}</p>
+                      <p className={`font-medium ${isCompleted ? 'text-gray-900' : 'text-gray-600'}`}>{label}</p>
                       {isCurrent && (
                         <p className="text-primary-400 text-xs mt-0.5 flex items-center gap-1">
                           <Clock size={11} /> Current Status
@@ -141,14 +141,14 @@ export default function CustomerTracking() {
           {/* Driver Info */}
           {shipment.assignedDriver && (
             <div className="glass-card p-6">
-              <h3 className="text-white font-semibold mb-4">Assigned Driver</h3>
+              <h3 className="text-gray-900 font-semibold mb-4">Assigned Driver</h3>
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white font-bold">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-gray-900 font-bold">
                   {shipment.assignedDriver.user?.name?.charAt(0)}
                 </div>
                 <div>
-                  <p className="text-white font-medium">{shipment.assignedDriver.user?.name}</p>
-                  <p className="text-gray-400 text-sm">{shipment.assignedDriver.user?.phone}</p>
+                  <p className="text-gray-900 font-medium">{shipment.assignedDriver.user?.name}</p>
+                  <p className="text-gray-700 text-sm">{shipment.assignedDriver.user?.phone}</p>
                 </div>
               </div>
             </div>

@@ -35,8 +35,8 @@ export default function ExpensesPage() {
       {showForm && (
         <div className="glass-card p-6 mb-6">
           <div className="flex justify-between items-center mb-4">
-            <h3 className="text-white font-semibold">New Expense</h3>
-            <button onClick={() => { setShowForm(false); reset(); }}><X size={18} className="text-gray-500 hover:text-white" /></button>
+            <h3 className="text-gray-900 font-semibold">New Expense</h3>
+            <button onClick={() => { setShowForm(false); reset(); }}><X size={18} className="text-gray-800 hover:text-gray-900" /></button>
           </div>
           <form onSubmit={handleSubmit((d) => createMutation.mutate(d))} className="grid md:grid-cols-3 gap-4">
             <div>
@@ -63,19 +63,19 @@ export default function ExpensesPage() {
       )}
 
       <div className="glass-card p-4 mb-4 flex items-center justify-between">
-        <span className="text-gray-400">Total Expenses</span>
+        <span className="text-gray-700">Total Expenses</span>
         <span className="text-2xl font-bold text-red-400">₹{totalExpenses.toLocaleString()}</span>
       </div>
 
       <div className="glass-card overflow-hidden">
-        {isLoading ? <div className="p-12 text-center text-gray-500">Loading...</div> : (
+        {isLoading ? <div className="p-12 text-center text-gray-800">Loading...</div> : (
           <table className="data-table">
             <thead><tr><th>Category</th><th>Description</th><th>Amount</th><th>Date</th><th>Recorded By</th></tr></thead>
             <tbody>
               {(data || []).map((e) => (
                 <tr key={e._id}>
                   <td><span className="badge-neutral capitalize">{e.category.replace('_', ' ')}</span></td>
-                  <td className="text-white">{e.description}</td>
+                  <td className="text-gray-900">{e.description}</td>
                   <td className="text-red-400 font-medium">₹{e.amount.toLocaleString()}</td>
                   <td>{format(new Date(e.date), 'dd MMM yyyy')}</td>
                   <td>{e.recordedBy?.name || 'System'}</td>

@@ -40,11 +40,11 @@ export default function OutgoingShipments() {
         <p className="page-subtitle">Dispatch shipments from your warehouse</p>
       </div>
       {isLoading ? (
-        <div className="glass-card p-12 text-center text-gray-500">Loading...</div>
+        <div className="glass-card p-12 text-center text-gray-800">Loading...</div>
       ) : shipments.length === 0 ? (
         <div className="glass-card p-12 text-center">
           <ArrowUp size={40} className="text-gray-600 mx-auto mb-3" />
-          <p className="text-gray-400">No shipments ready for dispatch</p>
+          <p className="text-gray-700">No shipments ready for dispatch</p>
         </div>
       ) : (
         <div className="space-y-4">
@@ -52,8 +52,8 @@ export default function OutgoingShipments() {
             <div key={s._id} className="glass-card p-6 flex items-start justify-between gap-4">
               <div>
                 <span className="font-mono text-primary-400 text-xs">{s.trackingNumber}</span>
-                <h3 className="text-white font-semibold">{s.materialName}</h3>
-                <p className="text-gray-400 text-sm">{s.materialWeight} kg → {s.deliveryAddress?.city}</p>
+                <h3 className="text-gray-900 font-semibold">{s.materialName}</h3>
+                <p className="text-gray-700 text-sm">{s.materialWeight} kg → {s.deliveryAddress?.city}</p>
               </div>
               <div className="flex flex-col items-end gap-3">
                 <span className="badge-info">At Warehouse</span>

@@ -27,25 +27,25 @@ export default function ResetPasswordPage() {
   };
 
   return (
-    <div className="min-h-screen bg-dark-950 flex items-center justify-center p-4 relative">
+    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4 relative">
       <div className="absolute inset-0 grid-bg opacity-30" />
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="w-full max-w-md relative z-10">
         <div className="text-center mb-8">
           <Link to="/" className="inline-flex items-center gap-2.5 mb-6">
             <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-accent-500 rounded-xl flex items-center justify-center">
-              <Truck size={20} className="text-white" />
+              <Truck size={20} className="text-gray-900" />
             </div>
             <span className="text-2xl font-display font-bold gradient-text">VelanX</span>
           </Link>
-          <h1 className="text-3xl font-display font-bold text-white mb-2">Set New Password</h1>
-          <p className="text-gray-400">Choose a strong password for your account</p>
+          <h1 className="text-3xl font-display font-bold text-gray-900 mb-2">Set New Password</h1>
+          <p className="text-gray-700">Choose a strong password for your account</p>
         </div>
         <div className="glass-card p-8">
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
             <div>
               <label className="input-label">New Password</label>
               <div className="relative">
-                <Lock size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-500" />
+                <Lock size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-800" />
                 <input
                   id="reset-password"
                   type={showPassword ? 'text' : 'password'}
@@ -53,7 +53,7 @@ export default function ResetPasswordPage() {
                   className={`input-field pl-10 pr-10 ${errors.password ? 'border-red-500' : ''}`}
                   {...register('password', { required: 'Password is required', minLength: { value: 6, message: 'Min 6 characters' } })}
                 />
-                <button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-3.5 top-1/2 -translate-y-1/2 text-gray-500 hover:text-white">
+                <button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-3.5 top-1/2 -translate-y-1/2 text-gray-800 hover:text-gray-900">
                   {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
                 </button>
               </div>
@@ -62,7 +62,7 @@ export default function ResetPasswordPage() {
             <div>
               <label className="input-label">Confirm Password</label>
               <div className="relative">
-                <Lock size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-500" />
+                <Lock size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-800" />
                 <input
                   id="reset-confirm-password"
                   type="password"

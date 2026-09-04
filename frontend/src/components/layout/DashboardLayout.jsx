@@ -120,13 +120,13 @@ export default function DashboardLayout({ role }) {
       >
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-accent-500 rounded-2xl flex items-center justify-center shadow-lg">
-            <Truck size={20} className="text-white" />
+            <Truck size={20} className="text-gray-900" />
           </div>
-          <span className="text-2xl font-display font-bold text-white tracking-wide">VelanX</span>
+          <span className="text-2xl font-display font-bold text-gray-900 tracking-wide">VelanX</span>
         </div>
 
         <div className="flex items-center gap-4">
-          <button className="w-12 h-12 rounded-full vision-glass flex items-center justify-center text-white hover:bg-white/10 transition-colors relative">
+          <button className="w-12 h-12 rounded-full vision-glass flex items-center justify-center text-gray-900 hover:bg-black/5 transition-colors relative">
             <Bell size={20} />
             <span className="absolute top-3 right-3 w-2.5 h-2.5 bg-accent-500 rounded-full shadow-[0_0_8px_rgba(6,182,212,0.8)]" />
           </button>
@@ -134,7 +134,7 @@ export default function DashboardLayout({ role }) {
           <div className="relative">
             <button 
               onClick={() => setProfileOpen(!profileOpen)}
-              className="w-12 h-12 rounded-full vision-glass flex items-center justify-center text-white font-bold overflow-hidden border border-white/20 hover:border-white/40 transition-all shadow-lg"
+              className="w-12 h-12 rounded-full vision-glass flex items-center justify-center text-gray-900 font-bold overflow-hidden border border-black/10 hover:border-white/40 transition-all shadow-lg"
             >
               {user?.name?.charAt(0).toUpperCase()}
             </button>
@@ -147,9 +147,9 @@ export default function DashboardLayout({ role }) {
                   exit={{ opacity: 0, y: 10, scale: 0.95 }}
                   className="absolute right-0 top-14 w-64 vision-panel p-4 z-50 flex flex-col gap-3"
                 >
-                  <div className="flex flex-col border-b border-white/10 pb-3">
-                    <span className="text-white font-semibold text-lg">{user?.name}</span>
-                    <span className="text-gray-400 text-xs">{user?.email}</span>
+                  <div className="flex flex-col border-b border-black/10 pb-3">
+                    <span className="text-gray-900 font-semibold text-lg">{user?.name}</span>
+                    <span className="text-gray-700 text-xs">{user?.email}</span>
                   </div>
                   <button 
                     onClick={handleLogout}

@@ -76,10 +76,10 @@ import OwnerCommandCenter from './pages/owner/OwnerCommandCenter';
 
 // Loading Spinner
 const LoadingSpinner = () => (
-  <div className="min-h-screen bg-dark-950 flex items-center justify-center">
+  <div className="min-h-screen bg-gray-50 flex items-center justify-center">
     <div className="flex flex-col items-center gap-4">
       <div className="w-12 h-12 border-4 border-primary-500/30 border-t-primary-500 rounded-full animate-spin" />
-      <p className="text-gray-400 text-sm animate-pulse">Loading VelanX...</p>
+      <p className="text-gray-700 text-sm animate-pulse">Loading VelanX...</p>
     </div>
   </div>
 );

@@ -44,12 +44,12 @@ export default function RegisterPage() {
         <div className="text-center mb-8">
           <Link to="/" className="inline-flex items-center gap-2.5 mb-6">
             <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-accent-500 rounded-xl flex items-center justify-center shadow-glow-primary">
-              <Truck size={20} className="text-white" />
+              <Truck size={20} className="text-gray-900" />
             </div>
             <span className="text-2xl font-display font-bold gradient-text">VelanX</span>
           </Link>
-          <h1 className="text-3xl font-display font-bold text-white mb-2">Create your account</h1>
-          <p className="text-gray-400">Start managing your logistics today</p>
+          <h1 className="text-3xl font-display font-bold text-gray-900 mb-2">Create your account</h1>
+          <p className="text-gray-700">Start managing your logistics today</p>
         </div>
 
         <div className="glass-card p-8">
@@ -58,7 +58,7 @@ export default function RegisterPage() {
             <div>
               <label className="input-label">Full Name</label>
               <div className="relative">
-                <User size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-500" />
+                <User size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-800" />
                 <input
                   id="register-name"
                   type="text"
@@ -74,7 +74,7 @@ export default function RegisterPage() {
             <div>
               <label className="input-label">Email Address</label>
               <div className="relative">
-                <Mail size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-500" />
+                <Mail size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-800" />
                 <input
                   id="register-email"
                   type="email"
@@ -90,7 +90,7 @@ export default function RegisterPage() {
             <div>
               <label className="input-label">Phone Number</label>
               <div className="relative">
-                <Phone size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-500" />
+                <Phone size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-800" />
                 <input
                   id="register-phone"
                   type="tel"
@@ -109,7 +109,7 @@ export default function RegisterPage() {
             <div>
               <label className="input-label">Password</label>
               <div className="relative">
-                <Lock size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-500" />
+                <Lock size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-800" />
                 <input
                   id="register-password"
                   type={showPassword ? 'text' : 'password'}
@@ -117,7 +117,7 @@ export default function RegisterPage() {
                   className={`input-field pl-10 pr-10 ${errors.password ? 'border-red-500' : ''}`}
                   {...register('password', { required: 'Password is required', minLength: { value: 6, message: 'Min 6 characters' } })}
                 />
-                <button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-3.5 top-1/2 -translate-y-1/2 text-gray-500 hover:text-white">
+                <button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-3.5 top-1/2 -translate-y-1/2 text-gray-800 hover:text-gray-900">
                   {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
                 </button>
               </div>
@@ -128,7 +128,7 @@ export default function RegisterPage() {
             <div>
               <label className="input-label">Confirm Password</label>
               <div className="relative">
-                <Lock size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-500" />
+                <Lock size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-800" />
                 <input
                   id="register-confirm-password"
                   type="password"
@@ -153,7 +153,7 @@ export default function RegisterPage() {
             </button>
           </form>
 
-          <p className="text-center text-gray-500 text-sm mt-6">
+          <p className="text-center text-gray-800 text-sm mt-6">
             Already have an account?{' '}
             <Link to="/login" className="text-primary-400 hover:text-primary-300 font-medium transition-colors">
               Sign in

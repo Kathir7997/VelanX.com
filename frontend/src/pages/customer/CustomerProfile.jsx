@@ -37,14 +37,14 @@ export default function CustomerProfile() {
         {/* Avatar */}
         <div className="flex flex-col items-center mb-8">
           <div className="relative">
-            <div className="w-24 h-24 rounded-full bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white text-4xl font-bold">
+            <div className="w-24 h-24 rounded-full bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-gray-900 text-4xl font-bold">
               {user?.name?.charAt(0).toUpperCase()}
             </div>
             <button id="change-avatar" className="absolute bottom-0 right-0 w-8 h-8 bg-primary-500 rounded-full flex items-center justify-center border-2 border-dark-900 hover:bg-primary-600 transition-colors">
-              <Camera size={14} className="text-white" />
+              <Camera size={14} className="text-gray-900" />
             </button>
           </div>
-          <h2 className="text-white text-xl font-bold mt-4">{user?.name}</h2>
+          <h2 className="text-gray-900 text-xl font-bold mt-4">{user?.name}</h2>
           <span className="badge-primary mt-1">{user?.role?.replace('_', ' ')}</span>
         </div>
 
@@ -74,13 +74,13 @@ export default function CustomerProfile() {
               { icon: Mail, label: 'Email Address', value: user?.email },
               { icon: Phone, label: 'Phone Number', value: user?.phone },
             ].map(({ icon: Icon, label, value }) => (
-              <div key={label} className="flex items-center gap-4 p-4 bg-white/5 rounded-xl">
+              <div key={label} className="flex items-center gap-4 p-4 bg-black/5 rounded-xl">
                 <div className="w-10 h-10 bg-primary-500/10 rounded-xl flex items-center justify-center border border-primary-500/20">
                   <Icon size={16} className="text-primary-400" />
                 </div>
                 <div>
-                  <p className="text-gray-400 text-xs">{label}</p>
-                  <p className="text-white font-medium">{value}</p>
+                  <p className="text-gray-700 text-xs">{label}</p>
+                  <p className="text-gray-900 font-medium">{value}</p>
                 </div>
               </div>
             ))}

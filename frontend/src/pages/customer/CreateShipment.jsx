@@ -96,14 +96,14 @@ export default function CreateShipment() {
           <React.Fragment key={id}>
             <div className="flex flex-col items-center gap-1">
               <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 ${
-                step > id ? 'bg-green-500' : step === id ? 'bg-primary-500 shadow-glow-primary' : 'bg-white/10'
+                step > id ? 'bg-green-500' : step === id ? 'bg-primary-500 shadow-glow-primary' : 'bg-black/5'
               }`}>
-                {step > id ? <CheckCircle size={18} className="text-white" /> : <Icon size={18} className={step === id ? 'text-white' : 'text-gray-500'} />}
+                {step > id ? <CheckCircle size={18} className="text-gray-900" /> : <Icon size={18} className={step === id ? 'text-gray-900' : 'text-gray-800'} />}
               </div>
-              <span className={`text-xs font-medium hidden sm:block ${step >= id ? 'text-white' : 'text-gray-500'}`}>{title}</span>
+              <span className={`text-xs font-medium hidden sm:block ${step >= id ? 'text-gray-900' : 'text-gray-800'}`}>{title}</span>
             </div>
             {i < STEPS.length - 1 && (
-              <div className={`flex-1 h-0.5 mx-2 transition-all duration-500 ${step > id ? 'bg-green-500' : 'bg-white/10'}`} />
+              <div className={`flex-1 h-0.5 mx-2 transition-all duration-500 ${step > id ? 'bg-green-500' : 'bg-black/5'}`} />
             )}
           </React.Fragment>
         ))}
@@ -114,22 +114,22 @@ export default function CreateShipment() {
           {/* Step 1 */}
           {step === 1 && (
             <motion.div key="step1" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} className="glass-card p-8 space-y-5">
-              <h2 className="text-white font-semibold text-xl mb-2">Shipment Details</h2>
+              <h2 className="text-gray-900 font-semibold text-xl mb-2">Shipment Details</h2>
 
               <div>
                 <label className="input-label">Shipment Type</label>
                 <div className="grid grid-cols-2 gap-3">
                   {['local', 'interstate'].map((type) => (
                     <label key={type} className={`flex items-center gap-3 p-4 rounded-xl border cursor-pointer transition-all ${
-                      shipmentType === type ? 'border-primary-500 bg-primary-500/10' : 'border-white/15 hover:border-white/30'
+                      shipmentType === type ? 'border-primary-500 bg-primary-500/10' : 'border-black/10 hover:border-white/30'
                     }`}>
                       <input type="radio" value={type} {...register('shipmentType')} className="hidden" />
                       <div className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${shipmentType === type ? 'border-primary-500' : 'border-gray-500'}`}>
                         {shipmentType === type && <div className="w-2 h-2 rounded-full bg-primary-500" />}
                       </div>
                       <div>
-                        <p className="text-white text-sm font-medium capitalize">{type}</p>
-                        <p className="text-gray-500 text-xs">{type === 'local' ? 'Same city delivery' : 'Multi-state delivery'}</p>
+                        <p className="text-gray-900 text-sm font-medium capitalize">{type}</p>
+                        <p className="text-gray-800 text-xs">{type === 'local' ? 'Same city delivery' : 'Multi-state delivery'}</p>
                       </div>
                     </label>
                   ))}
@@ -161,18 +161,18 @@ export default function CreateShipment() {
               {/* Image Upload */}
               <div>
                 <label className="input-label">Product Images (Optional, max 5)</label>
-                <label id="image-upload-area" className="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-white/20 rounded-xl cursor-pointer hover:border-primary-500/50 transition-colors">
-                  <Upload size={22} className="text-gray-500 mb-2" />
-                  <span className="text-gray-500 text-sm">Click to upload images</span>
+                <label id="image-upload-area" className="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-black/10 rounded-xl cursor-pointer hover:border-primary-500/50 transition-colors">
+                  <Upload size={22} className="text-gray-800 mb-2" />
+                  <span className="text-gray-800 text-sm">Click to upload images</span>
                   <input type="file" multiple accept="image/*" className="hidden" onChange={handleImageChange} />
                 </label>
                 {images.length > 0 && (
                   <div className="flex gap-2 mt-3 flex-wrap">
                     {images.map((img, i) => (
                       <div key={i} className="relative">
-                        <img src={URL.createObjectURL(img)} alt="" className="w-16 h-16 object-cover rounded-lg border border-white/20" />
+                        <img src={URL.createObjectURL(img)} alt="" className="w-16 h-16 object-cover rounded-lg border border-black/10" />
                         <button type="button" onClick={() => removeImage(i)} className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 rounded-full flex items-center justify-center">
-                          <X size={10} className="text-white" />
+                          <X size={10} className="text-gray-900" />
                         </button>
                       </div>
                     ))}
@@ -185,7 +185,7 @@ export default function CreateShipment() {
           {/* Step 2 */}
           {step === 2 && (
             <motion.div key="step2" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} className="glass-card p-8 space-y-6">
-              <h2 className="text-white font-semibold text-xl">Pickup & Delivery Addresses</h2>
+              <h2 className="text-gray-900 font-semibold text-xl">Pickup & Delivery Addresses</h2>
               {/* Pickup */}
               <div>
                 <p className="text-primary-400 text-sm font-semibold mb-3 flex items-center gap-2"><MapPin size={14} /> Pickup Address</p>
@@ -231,7 +231,7 @@ export default function CreateShipment() {
           {/* Step 3 */}
           {step === 3 && (
             <motion.div key="step3" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} className="glass-card p-8 space-y-5">
-              <h2 className="text-white font-semibold text-xl">Receiver Information</h2>
+              <h2 className="text-gray-900 font-semibold text-xl">Receiver Information</h2>
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
                   <label className="input-label">Receiver Name *</label>
@@ -260,43 +260,43 @@ export default function CreateShipment() {
           {/* Step 4 – Review */}
           {step === 4 && (
             <motion.div key="step4" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} className="glass-card p-8 space-y-6">
-              <h2 className="text-white font-semibold text-xl">Review & Confirm</h2>
+              <h2 className="text-gray-900 font-semibold text-xl">Review & Confirm</h2>
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="bg-dark-800/60 rounded-xl p-4 space-y-2">
                   <p className="text-primary-400 text-sm font-semibold">Shipment Details</p>
-                  <p className="text-white text-sm">{values.materialName}</p>
-                  <p className="text-gray-400 text-sm">{values.materialWeight} kg · {values.quantity} units</p>
+                  <p className="text-gray-900 text-sm">{values.materialName}</p>
+                  <p className="text-gray-700 text-sm">{values.materialWeight} kg · {values.quantity} units</p>
                   <span className="badge-primary text-xs">{values.shipmentType}</span>
                 </div>
                 <div className="bg-dark-800/60 rounded-xl p-4 space-y-2">
                   <p className="text-accent-400 text-sm font-semibold">Receiver</p>
-                  <p className="text-white text-sm">{values.receiverName}</p>
-                  <p className="text-gray-400 text-sm">{values.receiverPhone}</p>
+                  <p className="text-gray-900 text-sm">{values.receiverName}</p>
+                  <p className="text-gray-700 text-sm">{values.receiverPhone}</p>
                 </div>
                 <div className="bg-dark-800/60 rounded-xl p-4 space-y-1">
                   <p className="text-green-400 text-sm font-semibold">Pickup</p>
-                  <p className="text-white text-sm">{values.pickupStreet}</p>
-                  <p className="text-gray-400 text-sm">{values.pickupCity}, {values.pickupState} - {values.pickupPincode}</p>
+                  <p className="text-gray-900 text-sm">{values.pickupStreet}</p>
+                  <p className="text-gray-700 text-sm">{values.pickupCity}, {values.pickupState} - {values.pickupPincode}</p>
                 </div>
                 <div className="bg-dark-800/60 rounded-xl p-4 space-y-1">
                   <p className="text-yellow-400 text-sm font-semibold">Delivery</p>
-                  <p className="text-white text-sm">{values.deliveryStreet}</p>
-                  <p className="text-gray-400 text-sm">{values.deliveryCity}, {values.deliveryState} - {values.deliveryPincode}</p>
+                  <p className="text-gray-900 text-sm">{values.deliveryStreet}</p>
+                  <p className="text-gray-700 text-sm">{values.deliveryCity}, {values.deliveryState} - {values.deliveryPincode}</p>
                 </div>
               </div>
               {/* Pricing estimate */}
               <div className="bg-primary-500/10 border border-primary-500/30 rounded-xl p-4">
                 <p className="text-primary-400 text-sm font-semibold mb-2">Estimated Pricing</p>
                 <div className="space-y-1 text-sm">
-                  <div className="flex justify-between text-gray-300">
+                  <div className="flex justify-between text-gray-700">
                     <span>Base Price</span>
                     <span>₹{values.shipmentType === 'interstate' ? '500' : '200'}</span>
                   </div>
-                  <div className="flex justify-between text-gray-300">
+                  <div className="flex justify-between text-gray-700">
                     <span>Weight Charge ({values.materialWeight} kg × ₹10)</span>
                     <span>₹{(values.materialWeight * 10).toFixed(0)}</span>
                   </div>
-                  <div className="flex justify-between text-white font-semibold pt-1 border-t border-white/10 mt-2">
+                  <div className="flex justify-between text-gray-900 font-semibold pt-1 border-t border-black/10 mt-2">
                     <span>Total Estimate</span>
                     <span>₹{((values.shipmentType === 'interstate' ? 500 : 200) + values.materialWeight * 10).toFixed(0)}</span>
                   </div>
