@@ -333,7 +333,7 @@ export default function LandingPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="text-gray-400 text-lg leading-relaxed mb-10 max-w-lg"
+                className="text-gray-900 font-medium text-lg leading-relaxed mb-10 max-w-lg"
               >
                 VelanX is the complete logistics management platform — from booking to delivery, 
                 with real-time tracking, multi-warehouse support, and deep analytics for every role.
@@ -358,7 +358,7 @@ export default function LandingPage() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5 }}
-                className="flex flex-wrap gap-6 text-sm text-gray-500"
+                className="flex flex-wrap gap-6 text-sm text-gray-900 font-medium"
               >
                 {['No credit card required', 'Free 14-day trial', 'Cancel anytime'].map((item) => (
                   <div key={item} className="flex items-center gap-1.5">
@@ -498,7 +498,7 @@ export default function LandingPage() {
             <h2 className="text-4xl lg:text-5xl font-display font-black mb-4">
               Built for <span className="gradient-text">every team member</span>
             </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
+            <p className="text-gray-900 font-medium max-w-2xl mx-auto">
               Every role gets a dedicated, purpose-built interface with exactly the tools they need.
             </p>
           </div>
@@ -642,7 +642,7 @@ export default function LandingPage() {
             <h2 className="text-4xl lg:text-5xl font-display font-black mb-4">
               Simple, <span className="gradient-text">transparent pricing</span>
             </h2>
-            <p className="text-gray-400">Start free, scale as you grow. No hidden fees.</p>
+            <p className="text-gray-900 font-medium">Start free, scale as you grow. No hidden fees.</p>
           </div>
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {pricingPlans.map((plan, i) => (
