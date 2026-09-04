@@ -20,19 +20,6 @@ export default {
         display: ['Outfit', 'Inter', 'sans-serif'],
       },
       colors: {
-        gray: {
-          50: '#ffffff',
-          100: '#f9fafb',
-          200: '#f3f4f6',
-          300: '#e5e7eb',
-          400: '#d1d5db', // Brighter text-gray-400
-          500: '#9ca3af', // Brighter text-gray-500
-          600: '#6b7280', // Brighter text-gray-600
-          700: '#4b5563',
-          800: '#374151',
-          900: '#1f2937',
-          950: '#111827',
-        },
         primary: {
           50: '#eef2ff',
           100: '#e0e7ff',
