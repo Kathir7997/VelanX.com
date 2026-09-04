@@ -41,8 +41,8 @@ export default function ContactPage() {
             <div className="space-y-6">
               {[
                 { icon: Mail, label: 'Email', value: 'hello@velanx.com', color: 'text-primary-400', bg: 'bg-primary-500/10 border-primary-500/20' },
-                { icon: Phone, label: 'Phone', value: '+91 98765 43210', color: 'text-accent-400', bg: 'bg-accent-500/10 border-accent-500/20' },
-                { icon: MapPin, label: 'Office', value: '123 Tech Park, OMR, Chennai, TN 600097, India', color: 'text-green-400', bg: 'bg-green-500/10 border-green-500/20' },
+                { icon: Phone, label: 'Phone', value: '+91 9789399503', color: 'text-accent-400', bg: 'bg-accent-500/10 border-accent-500/20' },
+                { icon: MapPin, label: 'Office', value: '123 kaniyur coimbatore tamilnadu', color: 'text-green-400', bg: 'bg-green-500/10 border-green-500/20' },
               ].map(({ icon: Icon, label, value, color, bg }) => (
                 <div key={label} className="flex items-start gap-4">
                   <div className={`w-12 h-12 rounded-2xl flex items-center justify-center border ${bg} flex-shrink-0`}>
