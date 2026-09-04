@@ -20,7 +20,7 @@ export default function OwnerCommandCenter() {
   });
 
   if (isLoading) {
-    return <div className="text-gray-700">Loading Command Center...</div>;
+    return <div className="text-gray-400">Loading Command Center...</div>;
   }
 
   const {
@@ -68,8 +68,8 @@ export default function OwnerCommandCenter() {
           >
             <div className="flex items-start justify-between">
               <div>
-                <p className="text-gray-700 text-sm">{label}</p>
-                <p className="text-2xl font-display font-bold text-gray-900 mt-1">{value}</p>
+                <p className="text-gray-400 text-sm">{label}</p>
+                <p className="text-2xl font-display font-bold text-white mt-1">{value}</p>
               </div>
               <div className={`w-10 h-10 rounded-xl flex items-center justify-center bg-dark-900/50`}>
                 <Icon size={20} className={color} />
@@ -82,7 +82,7 @@ export default function OwnerCommandCenter() {
       <div className="grid lg:grid-cols-2 gap-6">
         {/* Revenue Trend */}
         <div className="glass-card p-6">
-          <h2 className="text-gray-900 font-semibold mb-4">Revenue Trend</h2>
+          <h2 className="text-white font-semibold mb-4">Revenue Trend</h2>
           <ResponsiveContainer width="100%" height={300}>
             <AreaChart data={monthlyData}>
               <defs>
@@ -102,7 +102,7 @@ export default function OwnerCommandCenter() {
 
         {/* Warehouse Capacity */}
         <div className="glass-card p-6">
-          <h2 className="text-gray-900 font-semibold mb-4">Warehouse Capacity Utilization (%)</h2>
+          <h2 className="text-white font-semibold mb-4">Warehouse Capacity Utilization (%)</h2>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={warehouseStats}>
               <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" />

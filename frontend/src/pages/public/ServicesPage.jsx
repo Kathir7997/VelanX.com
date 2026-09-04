@@ -17,7 +17,7 @@ export default function ServicesPage() {
       <div className="container-max mx-auto">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-16">
           <h1 className="text-5xl font-display font-black mb-4">Our <span className="gradient-text">Services</span></h1>
-          <p className="text-gray-700 text-lg max-w-2xl mx-auto">End-to-end logistics solutions designed for modern businesses</p>
+          <p className="text-gray-400 text-lg max-w-2xl mx-auto">End-to-end logistics solutions designed for modern businesses</p>
         </motion.div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map(({ icon: Icon, title, desc, color }, i) => (
@@ -25,8 +25,8 @@ export default function ServicesPage() {
               <div className={`w-12 h-12 rounded-2xl flex items-center justify-center mb-4 border ${color}`}>
                 <Icon size={22} />
               </div>
-              <h3 className="text-gray-900 font-semibold text-lg mb-2">{title}</h3>
-              <p className="text-gray-700 text-sm leading-relaxed">{desc}</p>
+              <h3 className="text-white font-semibold text-lg mb-2">{title}</h3>
+              <p className="text-gray-400 text-sm leading-relaxed">{desc}</p>
             </motion.div>
           ))}
         </div>

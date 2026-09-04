@@ -61,8 +61,8 @@ export default function AdminUsers() {
       {showForm && (
         <div className="glass-card p-6 mb-6">
           <div className="flex justify-between items-center mb-4">
-            <h3 className="text-gray-900 font-semibold">Create New User</h3>
-            <button onClick={() => { setShowForm(false); reset(); }}><X size={18} className="text-gray-800 hover:text-gray-900" /></button>
+            <h3 className="text-white font-semibold">Create New User</h3>
+            <button onClick={() => { setShowForm(false); reset(); }}><X size={18} className="text-gray-500 hover:text-white" /></button>
           </div>
           <form onSubmit={handleSubmit((d) => createMutation.mutate(d))} className="grid md:grid-cols-3 gap-4">
             {[
@@ -92,7 +92,7 @@ export default function AdminUsers() {
       )}
 
       {/* Tabs */}
-      <div className="flex items-center gap-4 mb-6 border-b border-black/10">
+      <div className="flex items-center gap-4 mb-6 border-b border-white/10">
         {[
           { id: 'all', label: 'All Users' },
           { id: 'customer', label: 'Customers' },
@@ -103,8 +103,8 @@ export default function AdminUsers() {
             onClick={() => setActiveTab(tab.id)}
             className={`pb-3 px-2 text-sm font-medium border-b-2 transition-colors ${
               activeTab === tab.id 
-                ? 'border-primary-500 text-gray-900' 
-                : 'border-transparent text-gray-800 hover:text-gray-700'
+                ? 'border-primary-500 text-white' 
+                : 'border-transparent text-gray-500 hover:text-gray-300'
             }`}
           >
             {tab.label}
@@ -113,7 +113,7 @@ export default function AdminUsers() {
       </div>
 
       <div className="glass-card overflow-hidden">
-        {isLoading ? <div className="p-12 text-center text-gray-800">Loading...</div> : (
+        {isLoading ? <div className="p-12 text-center text-gray-500">Loading...</div> : (
           <table className="data-table">
             <thead><tr><th>User</th><th>Email</th><th>Phone</th><th>Role</th><th>Status</th><th>Joined</th><th>Actions</th></tr></thead>
             <tbody>
@@ -121,21 +121,21 @@ export default function AdminUsers() {
                 <tr key={u._id}>
                   <td>
                     <div className="flex items-center gap-2">
-                      <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-gray-900 text-xs font-bold">{u.name?.charAt(0)}</div>
-                      <span className="text-gray-900 font-medium">{u.name}</span>
+                      <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white text-xs font-bold">{u.name?.charAt(0)}</div>
+                      <span className="text-white font-medium">{u.name}</span>
                     </div>
                   </td>
-                  <td className="text-gray-700 text-xs">{u.email}</td>
-                  <td className="text-gray-700 text-xs">{u.phone}</td>
+                  <td className="text-gray-400 text-xs">{u.email}</td>
+                  <td className="text-gray-400 text-xs">{u.phone}</td>
                   <td><span className="badge-primary text-xs capitalize">{u.role?.replace('_', ' ')}</span></td>
                   <td><span className={u.isActive ? 'badge-success' : 'badge-error'}>{u.isActive ? 'Active' : 'Inactive'}</span></td>
                   <td className="text-xs">{format(new Date(u.createdAt), 'dd MMM yyyy')}</td>
                   <td>
                     <div className="flex items-center gap-1">
-                      <button id={`toggle-user-${u._id}`} onClick={() => toggleMutation.mutate(u._id)} className="p-1.5 rounded-lg hover:bg-black/5 text-gray-700 hover:text-gray-900 transition-all" title={u.isActive ? 'Deactivate' : 'Activate'}>
+                      <button id={`toggle-user-${u._id}`} onClick={() => toggleMutation.mutate(u._id)} className="p-1.5 rounded-lg hover:bg-white/10 text-gray-400 hover:text-white transition-all" title={u.isActive ? 'Deactivate' : 'Activate'}>
                         {u.isActive ? <ToggleRight size={16} className="text-green-400" /> : <ToggleLeft size={16} />}
                       </button>
-                      <button id={`delete-user-${u._id}`} onClick={() => { if (window.confirm('Delete this user?')) deleteMutation.mutate(u._id); }} className="p-1.5 rounded-lg hover:bg-red-500/10 text-gray-700 hover:text-red-400 transition-all">
+                      <button id={`delete-user-${u._id}`} onClick={() => { if (window.confirm('Delete this user?')) deleteMutation.mutate(u._id); }} className="p-1.5 rounded-lg hover:bg-red-500/10 text-gray-400 hover:text-red-400 transition-all">
                         <Trash2 size={14} />
                       </button>
                     </div>

@@ -49,8 +49,8 @@ export default function AdminVehicles() {
       {showForm && (
         <div className="glass-card p-6 mb-6">
           <div className="flex justify-between items-center mb-4">
-            <h3 className="text-gray-900 font-semibold">Add New Vehicle</h3>
-            <button onClick={() => { setShowForm(false); reset(); }}><X size={18} className="text-gray-800 hover:text-gray-900" /></button>
+            <h3 className="text-white font-semibold">Add New Vehicle</h3>
+            <button onClick={() => { setShowForm(false); reset(); }}><X size={18} className="text-gray-500 hover:text-white" /></button>
           </div>
           <form onSubmit={handleSubmit((d) => createMutation.mutate(d))} className="grid md:grid-cols-3 gap-4">
             <div>
@@ -88,15 +88,15 @@ export default function AdminVehicles() {
       <div className="grid grid-cols-4 gap-3 mb-6">
         {STATUS_OPTIONS.map((status) => (
           <div key={status} className="stat-card">
-            <p className="text-xl font-bold text-gray-900">{vehicles.filter((v) => v.status === status).length}</p>
-            <p className="text-gray-700 text-xs capitalize">{status.replace('_', ' ')}</p>
+            <p className="text-xl font-bold text-white">{vehicles.filter((v) => v.status === status).length}</p>
+            <p className="text-gray-400 text-xs capitalize">{status.replace('_', ' ')}</p>
           </div>
         ))}
       </div>
 
       <div className="glass-card overflow-hidden">
-        {isLoading ? <div className="p-12 text-center text-gray-800">Loading...</div> : vehicles.length === 0 ? (
-          <div className="p-12 text-center"><Car size={40} className="text-gray-600 mx-auto mb-3" /><p className="text-gray-700">No vehicles found</p></div>
+        {isLoading ? <div className="p-12 text-center text-gray-500">Loading...</div> : vehicles.length === 0 ? (
+          <div className="p-12 text-center"><Car size={40} className="text-gray-600 mx-auto mb-3" /><p className="text-gray-400">No vehicles found</p></div>
         ) : (
           <table className="data-table">
             <thead><tr><th>Vehicle No.</th><th>Type</th><th>Brand/Model</th><th>Capacity</th><th>Status</th><th>Assigned Driver</th><th>Assign</th><th>Actions</th></tr></thead>
@@ -105,15 +105,15 @@ export default function AdminVehicles() {
                 <tr key={v._id}>
                   <td className="font-mono text-primary-400 font-semibold">{v.vehicleNumber}</td>
                   <td className="capitalize"><span className="badge-neutral text-xs">{v.vehicleType?.replace('_', ' ')}</span></td>
-                  <td className="text-gray-700 text-xs">{v.brand} {v.model}</td>
+                  <td className="text-gray-400 text-xs">{v.brand} {v.model}</td>
                   <td>{v.capacity} tons</td>
                   <td><span className={v.status === 'available' ? 'badge-success' : v.status === 'in_use' ? 'badge-warning' : 'badge-error'}>{v.status?.replace('_', ' ')}</span></td>
-                  <td className="text-gray-900 text-sm">{v.assignedDriver?.user?.name || '—'}</td>
+                  <td className="text-white text-sm">{v.assignedDriver?.user?.name || '—'}</td>
                   <td>
                     <select
                       id={`assign-driver-${v._id}`}
                       onChange={(e) => e.target.value && assignMutation.mutate({ vehicleId: v._id, driverId: e.target.value })}
-                      className="bg-gray-200 border border-black/10 rounded-lg px-2 py-1 text-gray-700 text-xs"
+                      className="bg-dark-800 border border-white/15 rounded-lg px-2 py-1 text-gray-300 text-xs"
                     >
                       <option value="">Assign Driver</option>
                       {drivers.filter((d) => d.status !== 'busy').map((d) => (
@@ -122,7 +122,7 @@ export default function AdminVehicles() {
                     </select>
                   </td>
                   <td>
-                    <button id={`delete-vehicle-${v._id}`} onClick={() => { if (confirm('Delete this vehicle?')) deleteMutation.mutate(v._id); }} className="p-1.5 rounded-lg hover:bg-red-500/10 text-gray-700 hover:text-red-400 transition-all">
+                    <button id={`delete-vehicle-${v._id}`} onClick={() => { if (confirm('Delete this vehicle?')) deleteMutation.mutate(v._id); }} className="p-1.5 rounded-lg hover:bg-red-500/10 text-gray-400 hover:text-red-400 transition-all">
                       <Trash2 size={14} />
                     </button>
                   </td>

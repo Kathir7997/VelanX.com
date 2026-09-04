@@ -25,7 +25,7 @@ export default function ManagerReplacements() {
     onError: () => toast.error('Failed to update request'),
   });
 
-  if (isLoading) return <div className="text-gray-700">Loading replacement requests...</div>;
+  if (isLoading) return <div className="text-gray-400">Loading replacement requests...</div>;
 
   return (
     <div className="space-y-6">
@@ -39,18 +39,18 @@ export default function ManagerReplacements() {
 
       <div className="grid gap-4">
         {requests?.length === 0 ? (
-          <div className="glass-card p-12 text-center text-gray-700">No replacement requests found.</div>
+          <div className="glass-card p-12 text-center text-gray-400">No replacement requests found.</div>
         ) : (
           requests?.map((req) => (
             <div key={req._id} className="glass-card p-5">
-              <div className="flex justify-between items-start mb-4 border-b border-black/5 pb-4">
+              <div className="flex justify-between items-start mb-4 border-b border-white/5 pb-4">
                 <div className="flex items-center gap-3">
                   <div className={`p-3 rounded-xl border ${req.type === 'driver' ? 'bg-blue-500/10 border-blue-500/20 text-blue-500' : 'bg-green-500/10 border-green-500/20 text-green-500'}`}>
                     {req.type === 'driver' ? <UserCircle size={24} /> : <Truck size={24} />}
                   </div>
                   <div>
-                    <h3 className="text-gray-900 font-medium text-lg capitalize">{req.type} Replacement</h3>
-                    <p className="text-gray-700 text-sm">Reason: {req.reason.replace('_', ' ')}</p>
+                    <h3 className="text-white font-medium text-lg capitalize">{req.type} Replacement</h3>
+                    <p className="text-gray-400 text-sm">Reason: {req.reason.replace('_', ' ')}</p>
                   </div>
                 </div>
                 <div className={`badge ${
@@ -62,15 +62,15 @@ export default function ManagerReplacements() {
               </div>
 
               <div className="grid md:grid-cols-2 gap-4 mb-4">
-                <div className="bg-gray-200 p-3 rounded-lg border border-dark-600">
-                  <p className="text-xs text-gray-800 mb-1">Original {req.type === 'driver' ? 'Driver' : 'Vehicle'}</p>
-                  <p className="text-gray-900 text-sm">
+                <div className="bg-dark-800 p-3 rounded-lg border border-dark-600">
+                  <p className="text-xs text-gray-500 mb-1">Original {req.type === 'driver' ? 'Driver' : 'Vehicle'}</p>
+                  <p className="text-white text-sm">
                     {req.type === 'driver' ? req.originalDriver?.user?.name : req.originalVehicle?.vehicleNumber}
                   </p>
                 </div>
-                <div className="bg-gray-200 p-3 rounded-lg border border-dark-600">
-                  <p className="text-xs text-gray-800 mb-1">Replacement Suggested</p>
-                  <p className="text-gray-900 text-sm">
+                <div className="bg-dark-800 p-3 rounded-lg border border-dark-600">
+                  <p className="text-xs text-gray-500 mb-1">Replacement Suggested</p>
+                  <p className="text-white text-sm">
                      {req.type === 'driver' 
                         ? (req.replacementDriver?.user?.name || 'Nearest Available Driver') 
                         : (req.replacementVehicle?.vehicleNumber || 'Nearest Spare Vehicle')}
@@ -79,14 +79,14 @@ export default function ManagerReplacements() {
               </div>
 
               {req.location && (
-                <div className="flex items-center gap-2 text-sm text-gray-700 mb-4">
+                <div className="flex items-center gap-2 text-sm text-gray-400 mb-4">
                   <MapPin size={16} className="text-primary-400" />
                   {req.location.address || `${req.location.lat}, ${req.location.lng}`}
                 </div>
               )}
 
               {req.status === 'pending' && (
-                <div className="flex gap-3 pt-4 border-t border-black/5">
+                <div className="flex gap-3 pt-4 border-t border-white/5">
                   <button
                     onClick={() => updateStatus({ id: req._id, status: 'approved' })}
                     disabled={isPending}

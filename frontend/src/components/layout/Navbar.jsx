@@ -43,7 +43,7 @@ export default function Navbar() {
             {/* Logo */}
             <Link to="/" className="flex items-center gap-2.5 group">
               <div className="w-9 h-9 bg-gradient-to-br from-primary-500 to-accent-500 rounded-xl flex items-center justify-center shadow-glow-primary group-hover:shadow-glow-accent transition-shadow duration-300">
-                <Truck size={18} className="text-gray-900" />
+                <Truck size={18} className="text-white" />
               </div>
               <span className="text-xl font-display font-bold gradient-text">VelanX</span>
             </Link>
@@ -56,8 +56,8 @@ export default function Navbar() {
                   to={link.href}
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                     location.pathname === link.href
-                      ? 'text-gray-900 bg-black/5'
-                      : 'text-gray-700 hover:text-gray-900 hover:bg-black/5'
+                      ? 'text-white bg-white/10'
+                      : 'text-gray-400 hover:text-white hover:bg-white/8'
                   }`}
                 >
                   {link.label}
@@ -77,7 +77,7 @@ export default function Navbar() {
             <button
               id="mobile-menu-btn"
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="md:hidden p-2 rounded-lg text-gray-700 hover:text-gray-900 hover:bg-black/5 transition-all"
+              className="md:hidden p-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/10 transition-all"
               aria-label="Toggle menu"
             >
               {mobileOpen ? <X size={22} /> : <Menu size={22} />}
@@ -103,8 +103,8 @@ export default function Navbar() {
                   to={link.href}
                   className={`px-4 py-3 rounded-xl text-base font-medium transition-all ${
                     location.pathname === link.href
-                      ? 'text-gray-900 bg-primary-500/20 border border-primary-500/30'
-                      : 'text-gray-700 hover:text-gray-900 hover:bg-black/5'
+                      ? 'text-white bg-primary-500/20 border border-primary-500/30'
+                      : 'text-gray-300 hover:text-white hover:bg-white/10'
                   }`}
                 >
                   {link.label}

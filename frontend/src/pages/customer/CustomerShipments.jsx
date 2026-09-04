@@ -47,7 +47,7 @@ export default function CustomerShipments() {
       {/* Filters */}
       <div className="flex flex-col sm:flex-row gap-3 mb-6">
         <div className="relative flex-1">
-          <Search size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-800" />
+          <Search size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-500" />
           <input
             id="shipments-search"
             className="input-field pl-10"
@@ -71,11 +71,11 @@ export default function CustomerShipments() {
 
       <div className="glass-card overflow-hidden">
         {isLoading ? (
-          <div className="p-12 text-center text-gray-800">Loading shipments...</div>
+          <div className="p-12 text-center text-gray-500">Loading shipments...</div>
         ) : shipments.length === 0 ? (
           <div className="p-12 text-center">
             <Package size={40} className="text-gray-600 mx-auto mb-3" />
-            <p className="text-gray-700">No shipments found</p>
+            <p className="text-gray-400">No shipments found</p>
           </div>
         ) : (
           <>
@@ -102,15 +102,15 @@ export default function CustomerShipments() {
                       animate={{ opacity: 1 }}
                     >
                       <td><span className="font-mono text-primary-400 text-xs">{s.trackingNumber}</span></td>
-                      <td className="text-gray-900 font-medium">{s.materialName}</td>
+                      <td className="text-white font-medium">{s.materialName}</td>
                       <td><span className={s.shipmentType === 'interstate' ? 'badge-primary' : 'badge-neutral'}>{s.shipmentType}</span></td>
                       <td>{s.pickupAddress?.city}</td>
                       <td>{s.deliveryAddress?.city}</td>
-                      <td className="text-gray-900 font-medium">₹{s.pricing?.total || 0}</td>
+                      <td className="text-white font-medium">₹{s.pricing?.total || 0}</td>
                       <td><span className={STATUS_MAP[s.status]?.color || 'badge-neutral'}>{STATUS_MAP[s.status]?.label || s.status}</span></td>
                       <td>{format(new Date(s.createdAt), 'dd MMM yy')}</td>
                       <td>
-                        <Link to={`/dashboard/customer/track?id=${s._id}`} id={`view-shipment-${s._id}`} className="p-1.5 rounded-lg hover:bg-black/5 text-gray-800 hover:text-gray-900 transition-all inline-flex">
+                        <Link to={`/dashboard/customer/track?id=${s._id}`} id={`view-shipment-${s._id}`} className="p-1.5 rounded-lg hover:bg-white/10 text-gray-500 hover:text-white transition-all inline-flex">
                           <Eye size={15} />
                         </Link>
                       </td>
@@ -121,8 +121,8 @@ export default function CustomerShipments() {
             </div>
             {/* Pagination */}
             {data?.pages > 1 && (
-              <div className="flex items-center justify-between p-4 border-t border-black/10">
-                <p className="text-gray-800 text-sm">Page {data.currentPage} of {data.pages}</p>
+              <div className="flex items-center justify-between p-4 border-t border-white/10">
+                <p className="text-gray-500 text-sm">Page {data.currentPage} of {data.pages}</p>
                 <div className="flex gap-2">
                   <button onClick={() => setPage((p) => p - 1)} disabled={page === 1} className="btn-secondary btn-sm disabled:opacity-40">Prev</button>
                   <button onClick={() => setPage((p) => p + 1)} disabled={page >= data.pages} className="btn-secondary btn-sm disabled:opacity-40">Next</button>

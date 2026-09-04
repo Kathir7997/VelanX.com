@@ -7,7 +7,7 @@ const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov
 const COLORS = ['#6366f1', '#06b6d4', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6'];
 
 const Tooltip2 = ({ active, payload }) => {
-  if (active && payload?.length) return <div className="glass-card p-3 text-xs text-gray-900">{payload[0]?.name}: {payload[0]?.value}</div>;
+  if (active && payload?.length) return <div className="glass-card p-3 text-xs text-white">{payload[0]?.name}: {payload[0]?.value}</div>;
   return null;
 };
 
@@ -37,7 +37,7 @@ export default function AdminAnalytics() {
         ].map(({ label, value, color }) => (
           <div key={label} className="stat-card">
             <p className={`text-2xl font-bold ${color}`}>{value}</p>
-            <p className="text-gray-700 text-sm">{label}</p>
+            <p className="text-gray-400 text-sm">{label}</p>
           </div>
         ))}
       </div>
@@ -45,7 +45,7 @@ export default function AdminAnalytics() {
       <div className="grid lg:grid-cols-2 gap-6 mb-6">
         {/* Revenue Chart */}
         <div className="glass-card p-6">
-          <h3 className="text-gray-900 font-semibold mb-4">Monthly Revenue vs Expenses</h3>
+          <h3 className="text-white font-semibold mb-4">Monthly Revenue vs Expenses</h3>
           <ResponsiveContainer width="100%" height={250}>
             <BarChart data={revenueChart}>
               <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" />
@@ -61,7 +61,7 @@ export default function AdminAnalytics() {
 
         {/* Shipment Status Pie */}
         <div className="glass-card p-6">
-          <h3 className="text-gray-900 font-semibold mb-4">Shipment Status Distribution</h3>
+          <h3 className="text-white font-semibold mb-4">Shipment Status Distribution</h3>
           <ResponsiveContainer width="100%" height={250}>
             <PieChart>
               <Pie data={statusChart} cx="50%" cy="50%" innerRadius={60} outerRadius={100} paddingAngle={3} dataKey="value">
@@ -77,7 +77,7 @@ export default function AdminAnalytics() {
       {/* Driver Status + Top Drivers */}
       <div className="grid lg:grid-cols-2 gap-6">
         <div className="glass-card p-6">
-          <h3 className="text-gray-900 font-semibold mb-4">Driver Status</h3>
+          <h3 className="text-white font-semibold mb-4">Driver Status</h3>
           <ResponsiveContainer width="100%" height={200}>
             <PieChart>
               <Pie data={driverStatusChart} cx="50%" cy="50%" outerRadius={80} dataKey="value" label={({ name, value }) => `${name}: ${value}`}>
@@ -89,21 +89,21 @@ export default function AdminAnalytics() {
         </div>
 
         <div className="glass-card p-6">
-          <h3 className="text-gray-900 font-semibold mb-4">Top Performing Drivers</h3>
+          <h3 className="text-white font-semibold mb-4">Top Performing Drivers</h3>
           <div className="space-y-3">
             {(drivers?.topDrivers || []).map((d, i) => (
               <div key={d._id} className="flex items-center gap-3">
                 <span className="w-6 h-6 flex items-center justify-center rounded-full bg-primary-500/20 text-primary-400 text-xs font-bold">{i + 1}</span>
-                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-gray-900 text-xs font-bold">
+                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white text-xs font-bold">
                   {d.user?.name?.charAt(0)}
                 </div>
                 <div className="flex-1">
-                  <p className="text-gray-900 text-sm font-medium">{d.user?.name}</p>
+                  <p className="text-white text-sm font-medium">{d.user?.name}</p>
                 </div>
                 <span className="text-green-400 text-sm font-semibold">{d.completedDeliveries} deliveries</span>
               </div>
             ))}
-            {(drivers?.topDrivers || []).length === 0 && <p className="text-gray-800 text-sm">No data yet</p>}
+            {(drivers?.topDrivers || []).length === 0 && <p className="text-gray-500 text-sm">No data yet</p>}
           </div>
         </div>
       </div>

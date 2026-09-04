@@ -67,10 +67,10 @@ function FeatureCard({ icon: Icon, title, description, color, delay = 0 }) {
       className="glass-card-hover p-6 group cursor-default"
     >
       <div className={`w-12 h-12 rounded-2xl flex items-center justify-center mb-4 ${color} transition-transform duration-300 group-hover:scale-110`}>
-        <Icon size={22} className="text-gray-900" />
+        <Icon size={22} className="text-white" />
       </div>
-      <h3 className="text-gray-900 font-semibold text-lg mb-2">{title}</h3>
-      <p className="text-gray-700 text-sm leading-relaxed">{description}</p>
+      <h3 className="text-white font-semibold text-lg mb-2">{title}</h3>
+      <p className="text-gray-400 text-sm leading-relaxed">{description}</p>
     </motion.div>
   );
 }
@@ -215,7 +215,7 @@ function DashboardPreview() {
           <div className="w-3 h-3 rounded-full bg-yellow-500/70" />
           <div className="w-3 h-3 rounded-full bg-green-500/70" />
         </div>
-        <div className="flex-1 bg-dark-900/60 rounded-md px-3 py-1 text-gray-800 text-xs flex items-center gap-2">
+        <div className="flex-1 bg-dark-900/60 rounded-md px-3 py-1 text-gray-500 text-xs flex items-center gap-2">
           <Search size={10} /> app.velanx.com/dashboard
         </div>
       </div>
@@ -229,7 +229,7 @@ function DashboardPreview() {
             <div className="h-3 w-16 bg-primary-500/40 rounded" />
           </div>
           {['Dashboard', 'Shipments', 'Drivers', 'Analytics', 'Settings'].map((item, i) => (
-            <div key={item} className={`flex items-center gap-2 px-2 py-1.5 rounded-lg text-xs ${i === 0 ? 'bg-primary-500/20 text-primary-400' : 'text-gray-800'}`}>
+            <div key={item} className={`flex items-center gap-2 px-2 py-1.5 rounded-lg text-xs ${i === 0 ? 'bg-primary-500/20 text-primary-400' : 'text-gray-500'}`}>
               <div className="w-3 h-3 bg-current rounded-sm opacity-60" />
               <span>{item}</span>
             </div>
@@ -247,7 +247,7 @@ function DashboardPreview() {
               { label: 'Vehicles', val: '32', color: 'text-yellow-400' },
             ].map(({ label, val, color }) => (
               <div key={label} className="bg-dark-800/60 rounded-xl p-3">
-                <p className="text-gray-800 text-xs">{label}</p>
+                <p className="text-gray-500 text-xs">{label}</p>
                 <p className={`font-bold text-sm mt-0.5 ${color}`}>{val}</p>
               </div>
             ))}
@@ -255,7 +255,7 @@ function DashboardPreview() {
 
           {/* Chart Mock */}
           <div className="bg-dark-800/60 rounded-xl p-3">
-            <p className="text-gray-700 text-xs mb-2">Revenue Overview</p>
+            <p className="text-gray-400 text-xs mb-2">Revenue Overview</p>
             <div className="flex items-end gap-1 h-16">
               {[40, 60, 45, 80, 65, 90, 75, 95, 70, 85, 55, 100].map((h, i) => (
                 <div key={i} className="flex-1 rounded-sm bg-gradient-to-t from-primary-600/80 to-primary-400/40" style={{ height: `${h}%` }} />
@@ -265,7 +265,7 @@ function DashboardPreview() {
 
           {/* Recent Activity */}
           <div className="bg-dark-800/60 rounded-xl p-3">
-            <p className="text-gray-700 text-xs mb-2">Recent Shipments</p>
+            <p className="text-gray-400 text-xs mb-2">Recent Shipments</p>
             <div className="space-y-1.5">
               {[
                 { id: 'VLX-ABC123', status: 'Delivered', color: 'text-green-400' },
@@ -273,7 +273,7 @@ function DashboardPreview() {
                 { id: 'VLX-GHI789', status: 'Pending', color: 'text-primary-400' },
               ].map(({ id, status, color }) => (
                 <div key={id} className="flex items-center justify-between text-xs">
-                  <span className="text-gray-700 font-mono">{id}</span>
+                  <span className="text-gray-400 font-mono">{id}</span>
                   <span className={`${color} font-medium`}>{status}</span>
                 </div>
               ))}
@@ -333,7 +333,7 @@ export default function LandingPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="text-gray-700 text-lg leading-relaxed mb-10 max-w-lg"
+                className="text-gray-400 text-lg leading-relaxed mb-10 max-w-lg"
               >
                 VelanX is the complete logistics management platform — from booking to delivery, 
                 with real-time tracking, multi-warehouse support, and deep analytics for every role.
@@ -358,7 +358,7 @@ export default function LandingPage() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5 }}
-                className="flex flex-wrap gap-6 text-sm text-gray-800"
+                className="flex flex-wrap gap-6 text-sm text-gray-500"
               >
                 {['No credit card required', 'Free 14-day trial', 'Cancel anytime'].map((item) => (
                   <div key={item} className="flex items-center gap-1.5">
@@ -385,7 +385,7 @@ export default function LandingPage() {
       </section>
 
       {/* ── STATS ────────────────────────────────────────────────── */}
-      <Section className="section-padding border-y border-black/10 glass-card mx-6 my-12 rounded-[2.5rem]">
+      <Section className="section-padding border-y border-white/10 glass-card mx-6 my-12 rounded-[2.5rem]">
         <div className="container-max mx-auto">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map(({ label, value, suffix, icon: Icon }, i) => (
@@ -403,7 +403,7 @@ export default function LandingPage() {
                 <div className="text-4xl font-display font-black gradient-text">
                   <AnimatedCounter target={value} suffix={suffix} />
                 </div>
-                <p className="text-gray-700 text-sm">{label}</p>
+                <p className="text-gray-400 text-sm">{label}</p>
               </motion.div>
             ))}
           </div>
@@ -419,7 +419,7 @@ export default function LandingPage() {
               Everything you need to{' '}
               <span className="gradient-text">run logistics</span>
             </h2>
-            <p className="text-gray-700 max-w-2xl mx-auto">
+            <p className="text-gray-400 max-w-2xl mx-auto">
               From shipment creation to final delivery confirmation, VelanX covers every step with enterprise-grade features.
             </p>
           </div>
@@ -441,7 +441,7 @@ export default function LandingPage() {
               <span className="gradient-text">journey</span>
             </h2>
             {/* Toggle */}
-            <div className="inline-flex gap-1 p-1 bg-dark-800/60 rounded-xl border border-black/10 mt-6">
+            <div className="inline-flex gap-1 p-1 bg-dark-800/60 rounded-xl border border-white/10 mt-6">
               {['local', 'interstate'].map((type) => (
                 <button
                   key={type}
@@ -449,8 +449,8 @@ export default function LandingPage() {
                   onClick={() => setActiveWorkflow(type)}
                   className={`px-6 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 ${
                     activeWorkflow === type
-                      ? 'bg-primary-500 text-gray-900 shadow-glow-primary'
-                      : 'text-gray-700 hover:text-gray-900'
+                      ? 'bg-primary-500 text-white shadow-glow-primary'
+                      : 'text-gray-400 hover:text-white'
                   }`}
                 >
                   {type === 'local' ? '🏙 Local Delivery' : '🛣 Interstate Delivery'}
@@ -476,9 +476,9 @@ export default function LandingPage() {
                     className="flex flex-col items-center gap-2"
                   >
                     <div className={`w-12 h-12 ${step.color} rounded-2xl flex items-center justify-center shadow-lg`}>
-                      <step.icon size={20} className="text-gray-900" />
+                      <step.icon size={20} className="text-white" />
                     </div>
-                    <span className="text-xs text-gray-700 text-center max-w-[80px]">{step.label}</span>
+                    <span className="text-xs text-gray-400 text-center max-w-[80px]">{step.label}</span>
                   </motion.div>
                   {i < arr.length - 1 && (
                     <ChevronRight size={16} className="text-gray-600 flex-shrink-0" />
@@ -498,7 +498,7 @@ export default function LandingPage() {
             <h2 className="text-4xl lg:text-5xl font-display font-black mb-4">
               Built for <span className="gradient-text">every team member</span>
             </h2>
-            <p className="text-gray-700 max-w-2xl mx-auto">
+            <p className="text-gray-400 max-w-2xl mx-auto">
               Every role gets a dedicated, purpose-built interface with exactly the tools they need.
             </p>
           </div>
@@ -513,15 +513,15 @@ export default function LandingPage() {
                 className={`glass-card p-6 border ${role.border} bg-gradient-to-br ${role.gradient} hover:-translate-y-1 transition-transform duration-300`}
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 bg-black/5 rounded-xl flex items-center justify-center">
-                    <role.icon size={20} className="text-gray-900" />
+                  <div className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center">
+                    <role.icon size={20} className="text-white" />
                   </div>
-                  <h3 className="text-gray-900 font-bold text-lg">{role.role}</h3>
+                  <h3 className="text-white font-bold text-lg">{role.role}</h3>
                 </div>
-                <p className="text-gray-700 text-sm mb-4 leading-relaxed">{role.description}</p>
+                <p className="text-gray-400 text-sm mb-4 leading-relaxed">{role.description}</p>
                 <ul className="space-y-2">
                   {role.features.map((f) => (
-                    <li key={f} className="flex items-center gap-2 text-sm text-gray-700">
+                    <li key={f} className="flex items-center gap-2 text-sm text-gray-300">
                       <CheckCircle size={13} className="text-green-400 flex-shrink-0" />
                       {f}
                     </li>
@@ -543,7 +543,7 @@ export default function LandingPage() {
                 Data-driven decisions for{' '}
                 <span className="gradient-text">smarter operations</span>
               </h2>
-              <p className="text-gray-700 leading-relaxed mb-8">
+              <p className="text-gray-400 leading-relaxed mb-8">
                 Get comprehensive visibility into every aspect of your logistics operations — 
                 revenue trends, driver performance, shipment analytics, and warehouse efficiency.
               </p>
@@ -554,7 +554,7 @@ export default function LandingPage() {
                   { label: 'Fleet Reports', icon: Car },
                   { label: 'Warehouse KPIs', icon: Warehouse },
                 ].map(({ label, icon: Icon }) => (
-                  <div key={label} className="flex items-center gap-2 text-sm text-gray-700">
+                  <div key={label} className="flex items-center gap-2 text-sm text-gray-300">
                     <div className="w-8 h-8 bg-primary-500/10 rounded-lg flex items-center justify-center border border-primary-500/20">
                       <Icon size={14} className="text-primary-400" />
                     </div>
@@ -570,8 +570,8 @@ export default function LandingPage() {
             <div className="glass-card p-6">
               <div className="flex items-center justify-between mb-6">
                 <div>
-                  <p className="text-gray-900 font-semibold">Monthly Revenue</p>
-                  <p className="text-gray-700 text-sm">2026</p>
+                  <p className="text-white font-semibold">Monthly Revenue</p>
+                  <p className="text-gray-400 text-sm">2026</p>
                 </div>
                 <div className="text-2xl font-bold text-green-400">₹48.2L</div>
               </div>
@@ -588,8 +588,8 @@ export default function LandingPage() {
                   </div>
                 ))}
               </div>
-              <div className="flex items-center justify-between mt-4 pt-4 border-t border-black/10 text-sm">
-                <span className="text-gray-700">vs last year</span>
+              <div className="flex items-center justify-between mt-4 pt-4 border-t border-white/10 text-sm">
+                <span className="text-gray-400">vs last year</span>
                 <span className="text-green-400 font-semibold flex items-center gap-1">
                   <TrendingUp size={14} /> +32.4%
                 </span>
@@ -623,10 +623,10 @@ export default function LandingPage() {
                     <Star key={j} size={14} className="text-yellow-400 fill-current" />
                   ))}
                 </div>
-                <p className="text-gray-700 text-sm leading-relaxed mb-6">"{t.text}"</p>
+                <p className="text-gray-300 text-sm leading-relaxed mb-6">"{t.text}"</p>
                 <div>
-                  <p className="text-gray-900 font-semibold">{t.name}</p>
-                  <p className="text-gray-800 text-sm">{t.role} · {t.company}</p>
+                  <p className="text-white font-semibold">{t.name}</p>
+                  <p className="text-gray-500 text-sm">{t.role} · {t.company}</p>
                 </div>
               </motion.div>
             ))}
@@ -642,7 +642,7 @@ export default function LandingPage() {
             <h2 className="text-4xl lg:text-5xl font-display font-black mb-4">
               Simple, <span className="gradient-text">transparent pricing</span>
             </h2>
-            <p className="text-gray-700">Start free, scale as you grow. No hidden fees.</p>
+            <p className="text-gray-400">Start free, scale as you grow. No hidden fees.</p>
           </div>
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {pricingPlans.map((plan, i) => (
@@ -655,21 +655,21 @@ export default function LandingPage() {
                 className={`glass-card p-8 relative ${plan.popular ? 'border-primary-500/50 ring-1 ring-primary-500/30' : ''}`}
               >
                 {plan.popular && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary-500 text-gray-900 text-xs font-bold rounded-full">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary-500 text-white text-xs font-bold rounded-full">
                     Most Popular
                   </div>
                 )}
                 <div className="mb-6">
-                  <h3 className="text-gray-900 font-bold text-xl mb-1">{plan.name}</h3>
-                  <p className="text-gray-800 text-sm">{plan.description}</p>
+                  <h3 className="text-white font-bold text-xl mb-1">{plan.name}</h3>
+                  <p className="text-gray-500 text-sm">{plan.description}</p>
                 </div>
                 <div className="mb-8">
-                  <span className="text-4xl font-display font-black text-gray-900">{plan.price}</span>
-                  <span className="text-gray-800 text-sm">{plan.period}</span>
+                  <span className="text-4xl font-display font-black text-white">{plan.price}</span>
+                  <span className="text-gray-500 text-sm">{plan.period}</span>
                 </div>
                 <ul className="space-y-3 mb-8">
                   {plan.features.map((f) => (
-                    <li key={f} className="flex items-center gap-2 text-sm text-gray-700">
+                    <li key={f} className="flex items-center gap-2 text-sm text-gray-300">
                       <CheckCircle size={14} className="text-green-400 flex-shrink-0" />
                       {f}
                     </li>
@@ -697,7 +697,7 @@ export default function LandingPage() {
                 Ready to transform your{' '}
                 <span className="gradient-text">logistics?</span>
               </h2>
-              <p className="text-gray-700 text-lg mb-10 max-w-2xl mx-auto">
+              <p className="text-gray-400 text-lg mb-10 max-w-2xl mx-auto">
                 Join thousands of businesses that trust VelanX for their complete logistics management.
               </p>
               <div className="flex flex-wrap gap-4 justify-center">

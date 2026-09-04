@@ -42,15 +42,15 @@ export default function AccountantOverview() {
           <motion.div key={label} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.07 }} className="stat-card">
             <div className={`w-10 h-10 rounded-xl flex items-center justify-center border ${bg}`}><Icon size={18} className={color} /></div>
             <div>
-              <p className="text-xl font-display font-bold text-gray-900">{value}</p>
-              <p className="text-gray-700 text-sm">{label}</p>
+              <p className="text-xl font-display font-bold text-white">{value}</p>
+              <p className="text-gray-400 text-sm">{label}</p>
             </div>
           </motion.div>
         ))}
       </div>
       {/* Recent Expenses */}
       <div className="glass-card overflow-hidden">
-        <div className="p-6 border-b border-black/10"><h2 className="text-gray-900 font-semibold">Recent Expenses</h2></div>
+        <div className="p-6 border-b border-white/10"><h2 className="text-white font-semibold">Recent Expenses</h2></div>
         <div className="table-wrapper">
           <table className="data-table">
             <thead><tr><th>Category</th><th>Description</th><th>Amount</th><th>Status</th></tr></thead>
@@ -58,8 +58,8 @@ export default function AccountantOverview() {
               {(expenses || []).slice(0, 5).map((e) => (
                 <tr key={e._id}>
                   <td><span className="capitalize badge-neutral">{e.category.replace('_', ' ')}</span></td>
-                  <td className="text-gray-900">{e.description}</td>
-                  <td className="text-gray-900 font-medium">₹{e.amount.toLocaleString()}</td>
+                  <td className="text-white">{e.description}</td>
+                  <td className="text-white font-medium">₹{e.amount.toLocaleString()}</td>
                   <td><span className={e.status === 'approved' ? 'badge-success' : 'badge-warning'}>{e.status}</span></td>
                 </tr>
               ))}

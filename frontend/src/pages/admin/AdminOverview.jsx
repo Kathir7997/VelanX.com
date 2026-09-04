@@ -50,8 +50,8 @@ export default function AdminOverview() {
               <div className="flex items-center gap-3">
                 <div className={`w-10 h-10 rounded-xl flex items-center justify-center border ${bg}`}><Icon size={18} className={color} /></div>
                 <div>
-                  <p className="text-2xl font-display font-bold text-gray-900">{value}</p>
-                  <p className="text-gray-700 text-sm">{label}</p>
+                  <p className="text-2xl font-display font-bold text-white">{value}</p>
+                  <p className="text-gray-400 text-sm">{label}</p>
                 </div>
               </div>
             </Link>
@@ -62,7 +62,7 @@ export default function AdminOverview() {
       {/* Revenue Chart */}
       <div className="glass-card p-6 mb-6">
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-gray-900 font-semibold">Revenue & Profit Trend</h2>
+          <h2 className="text-white font-semibold">Revenue & Profit Trend</h2>
           <Link to="analytics" className="text-primary-400 text-sm hover:text-primary-300">View Details →</Link>
         </div>
         <ResponsiveContainer width="100%" height={250}>
@@ -87,9 +87,9 @@ export default function AdminOverview() {
         ].map(({ label, href, icon: Icon, color }) => (
           <Link key={href} to={href} id={`quick-${href}`} className="glass-card-hover p-5 flex items-center gap-3">
             <div className={`w-10 h-10 ${color} rounded-xl flex items-center justify-center`}>
-              <Icon size={18} className="text-gray-900" />
+              <Icon size={18} className="text-white" />
             </div>
-            <span className="text-gray-900 font-medium">{label}</span>
+            <span className="text-white font-medium">{label}</span>
           </Link>
         ))}
       </div>

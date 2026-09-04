@@ -65,8 +65,8 @@ export default function CustomerOverview() {
               <Icon size={18} className={color} />
             </div>
             <div>
-              <p className="text-2xl font-display font-bold text-gray-900">{isLoading ? '—' : value}</p>
-              <p className="text-gray-700 text-sm">{label}</p>
+              <p className="text-2xl font-display font-bold text-white">{isLoading ? '—' : value}</p>
+              <p className="text-gray-400 text-sm">{label}</p>
             </div>
           </motion.div>
         ))}
@@ -76,40 +76,40 @@ export default function CustomerOverview() {
       <div className="grid md:grid-cols-2 gap-4 mb-8">
         <Link to="create-shipment" id="quick-create-shipment" className="glass-card-hover p-6 flex items-center gap-4 group">
           <div className="w-12 h-12 bg-primary-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-            <Plus size={22} className="text-gray-900" />
+            <Plus size={22} className="text-white" />
           </div>
           <div>
-            <h3 className="text-gray-900 font-semibold">Create New Shipment</h3>
-            <p className="text-gray-700 text-sm">Book a local or interstate shipment</p>
+            <h3 className="text-white font-semibold">Create New Shipment</h3>
+            <p className="text-gray-400 text-sm">Book a local or interstate shipment</p>
           </div>
-          <ArrowRight size={18} className="text-gray-800 ml-auto group-hover:text-primary-400 transition-colors" />
+          <ArrowRight size={18} className="text-gray-500 ml-auto group-hover:text-primary-400 transition-colors" />
         </Link>
         <Link to="track" id="quick-track" className="glass-card-hover p-6 flex items-center gap-4 group">
           <div className="w-12 h-12 bg-accent-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-            <MapPin size={22} className="text-gray-900" />
+            <MapPin size={22} className="text-white" />
           </div>
           <div>
-            <h3 className="text-gray-900 font-semibold">Track a Shipment</h3>
-            <p className="text-gray-700 text-sm">Real-time status and location</p>
+            <h3 className="text-white font-semibold">Track a Shipment</h3>
+            <p className="text-gray-400 text-sm">Real-time status and location</p>
           </div>
-          <ArrowRight size={18} className="text-gray-800 ml-auto group-hover:text-accent-400 transition-colors" />
+          <ArrowRight size={18} className="text-gray-500 ml-auto group-hover:text-accent-400 transition-colors" />
         </Link>
       </div>
 
       {/* Recent Shipments */}
       <div className="glass-card overflow-hidden">
-        <div className="p-6 flex items-center justify-between border-b border-black/10">
-          <h2 className="text-gray-900 font-semibold text-lg">Recent Shipments</h2>
+        <div className="p-6 flex items-center justify-between border-b border-white/10">
+          <h2 className="text-white font-semibold text-lg">Recent Shipments</h2>
           <Link to="shipments" className="text-primary-400 text-sm hover:text-primary-300 transition-colors flex items-center gap-1">
             View all <ArrowRight size={14} />
           </Link>
         </div>
         {isLoading ? (
-          <div className="p-8 text-center text-gray-800">Loading...</div>
+          <div className="p-8 text-center text-gray-500">Loading...</div>
         ) : shipments.length === 0 ? (
           <div className="p-8 text-center">
             <Package size={40} className="text-gray-600 mx-auto mb-3" />
-            <p className="text-gray-700">No shipments yet</p>
+            <p className="text-gray-400">No shipments yet</p>
             <Link to="create-shipment" className="btn-primary btn-sm mt-4 inline-flex">
               Create First Shipment
             </Link>
@@ -133,7 +133,7 @@ export default function CustomerOverview() {
                     <td>
                       <span className="font-mono text-primary-400 text-xs">{s.trackingNumber}</span>
                     </td>
-                    <td className="text-gray-900">{s.materialName}</td>
+                    <td className="text-white">{s.materialName}</td>
                     <td>{s.pickupAddress?.city}</td>
                     <td>{s.deliveryAddress?.city}</td>
                     <td>

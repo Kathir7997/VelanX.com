@@ -32,19 +32,19 @@ export default function ForgotPasswordPage() {
         <div className="text-center mb-8">
           <Link to="/" className="inline-flex items-center gap-2.5 mb-6">
             <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-accent-500 rounded-xl flex items-center justify-center">
-              <Truck size={20} className="text-gray-900" />
+              <Truck size={20} className="text-white" />
             </div>
             <span className="text-2xl font-display font-bold gradient-text">VelanX</span>
           </Link>
-          <h1 className="text-3xl font-display font-bold text-gray-900 mb-2">Reset Password</h1>
-          <p className="text-gray-700">Enter your email to receive a reset link</p>
+          <h1 className="text-3xl font-display font-bold text-white mb-2">Reset Password</h1>
+          <p className="text-gray-400">Enter your email to receive a reset link</p>
         </div>
         <div className="glass-card p-8">
           {sent ? (
             <div className="text-center py-6">
               <CheckCircle size={48} className="text-green-400 mx-auto mb-4" />
-              <h3 className="text-gray-900 font-semibold text-lg mb-2">Email Sent!</h3>
-              <p className="text-gray-700 text-sm mb-6">Check your inbox for the password reset link.</p>
+              <h3 className="text-white font-semibold text-lg mb-2">Email Sent!</h3>
+              <p className="text-gray-400 text-sm mb-6">Check your inbox for the password reset link.</p>
               <Link to="/login" className="btn-primary w-full justify-center">Back to Login</Link>
             </div>
           ) : (
@@ -52,7 +52,7 @@ export default function ForgotPasswordPage() {
               <div>
                 <label className="input-label">Email Address</label>
                 <div className="relative">
-                  <Mail size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-800" />
+                  <Mail size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-500" />
                   <input
                     id="forgot-email"
                     type="email"
@@ -69,7 +69,7 @@ export default function ForgotPasswordPage() {
             </form>
           )}
           <div className="text-center mt-6">
-            <Link to="/login" className="inline-flex items-center gap-2 text-gray-800 hover:text-gray-900 text-sm transition-colors">
+            <Link to="/login" className="inline-flex items-center gap-2 text-gray-500 hover:text-white text-sm transition-colors">
               <ArrowLeft size={14} /> Back to login
             </Link>
           </div>

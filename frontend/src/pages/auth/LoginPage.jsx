@@ -58,12 +58,12 @@ export default function LoginPage() {
         <div className="text-center mb-8">
           <Link to="/" className="inline-flex items-center gap-2.5 mb-6">
             <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-accent-500 rounded-xl flex items-center justify-center shadow-glow-primary">
-              <Truck size={20} className="text-gray-900" />
+              <Truck size={20} className="text-white" />
             </div>
             <span className="text-2xl font-display font-bold gradient-text">VelanX</span>
           </Link>
-          <h1 className="text-3xl font-display font-bold text-gray-900 mb-2">Welcome back</h1>
-          <p className="text-gray-700">Sign in to your VelanX account</p>
+          <h1 className="text-3xl font-display font-bold text-white mb-2">Welcome back</h1>
+          <p className="text-gray-400">Sign in to your VelanX account</p>
         </div>
 
         <div className="glass-card p-8">
@@ -72,7 +72,7 @@ export default function LoginPage() {
             <div>
               <label className="input-label">Email Address</label>
               <div className="relative">
-                <Mail size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-800" />
+                <Mail size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-500" />
                 <input
                   id="login-email"
                   type="email"
@@ -93,7 +93,7 @@ export default function LoginPage() {
                 </Link>
               </div>
               <div className="relative">
-                <Lock size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-800" />
+                <Lock size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-500" />
                 <input
                   id="login-password"
                   type={showPassword ? 'text' : 'password'}
@@ -104,7 +104,7 @@ export default function LoginPage() {
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3.5 top-1/2 -translate-y-1/2 text-gray-800 hover:text-gray-900 transition-colors"
+                  className="absolute right-3.5 top-1/2 -translate-y-1/2 text-gray-500 hover:text-white transition-colors"
                 >
                   {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
                 </button>
@@ -123,7 +123,7 @@ export default function LoginPage() {
             </button>
           </form>
 
-          <p className="text-center text-gray-800 text-sm mt-6">
+          <p className="text-center text-gray-500 text-sm mt-6">
             Don't have an account?{' '}
             <Link to="/register" className="text-primary-400 hover:text-primary-300 font-medium transition-colors">
               Sign up free
@@ -133,7 +133,7 @@ export default function LoginPage() {
 
         {/* Demo Credentials */}
         <div className="glass-card p-4 mt-4">
-          <p className="text-gray-800 text-xs text-center mb-3 font-medium">Demo Credentials</p>
+          <p className="text-gray-500 text-xs text-center mb-3 font-medium">Demo Credentials</p>
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-2 text-xs">
             {[
               { role: 'Owner', email: 'owner@velanx.com' },
@@ -145,14 +145,14 @@ export default function LoginPage() {
             ].map(({ role, email }) => (
               <div 
                 key={role} 
-                className="bg-black/5 rounded-lg p-2 cursor-pointer hover:bg-black/5 transition-colors"
+                className="bg-white/5 rounded-lg p-2 cursor-pointer hover:bg-white/10 transition-colors"
                 onClick={() => {
                   setValue('email', email);
                   setValue('password', 'Password@123');
                 }}
               >
                 <p className="text-primary-400 font-semibold">{role}</p>
-                <p className="text-gray-800 truncate">{email}</p>
+                <p className="text-gray-500 truncate">{email}</p>
                 <p className="text-gray-600">Pass: Password@123</p>
               </div>
             ))}

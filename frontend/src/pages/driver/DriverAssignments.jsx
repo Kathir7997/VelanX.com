@@ -46,11 +46,11 @@ export default function DriverAssignments() {
       </div>
 
       {isLoading ? (
-        <div className="glass-card p-12 text-center text-gray-800">Loading...</div>
+        <div className="glass-card p-12 text-center text-gray-500">Loading...</div>
       ) : assignments.length === 0 ? (
         <div className="glass-card p-12 text-center">
           <Navigation size={40} className="text-gray-600 mx-auto mb-3" />
-          <p className="text-gray-700">No assignments at the moment</p>
+          <p className="text-gray-400">No assignments at the moment</p>
         </div>
       ) : (
         <div className="space-y-4">
@@ -65,8 +65,8 @@ export default function DriverAssignments() {
               <div className="flex items-start justify-between gap-4 mb-4">
                 <div>
                   <span className="font-mono text-primary-400 text-xs">{s.trackingNumber}</span>
-                  <h3 className="text-gray-900 font-semibold text-lg">{s.materialName}</h3>
-                  <p className="text-gray-700 text-sm">{s.materialWeight} kg · {s.quantity} units</p>
+                  <h3 className="text-white font-semibold text-lg">{s.materialName}</h3>
+                  <p className="text-gray-400 text-sm">{s.materialWeight} kg · {s.quantity} units</p>
                 </div>
                 <span className="badge-warning">{s.status.replace(/_/g, ' ')}</span>
               </div>
@@ -74,18 +74,18 @@ export default function DriverAssignments() {
               <div className="grid md:grid-cols-2 gap-4 mb-4">
                 <div className="bg-dark-800/60 rounded-xl p-3">
                   <p className="text-green-400 text-xs font-semibold mb-1 flex items-center gap-1"><MapPin size={11} /> PICKUP</p>
-                  <p className="text-gray-900 text-sm">{s.pickupAddress?.street}</p>
-                  <p className="text-gray-700 text-xs">{s.pickupAddress?.city}, {s.pickupAddress?.state}</p>
+                  <p className="text-white text-sm">{s.pickupAddress?.street}</p>
+                  <p className="text-gray-400 text-xs">{s.pickupAddress?.city}, {s.pickupAddress?.state}</p>
                 </div>
                 <div className="bg-dark-800/60 rounded-xl p-3">
                   <p className="text-red-400 text-xs font-semibold mb-1 flex items-center gap-1"><MapPin size={11} /> DELIVERY</p>
-                  <p className="text-gray-900 text-sm">{s.deliveryAddress?.street}</p>
-                  <p className="text-gray-700 text-xs">{s.deliveryAddress?.city}, {s.deliveryAddress?.state}</p>
+                  <p className="text-white text-sm">{s.deliveryAddress?.street}</p>
+                  <p className="text-gray-400 text-xs">{s.deliveryAddress?.city}, {s.deliveryAddress?.state}</p>
                 </div>
               </div>
 
               {s.customer && (
-                <div className="flex items-center gap-2 mb-4 text-sm text-gray-700">
+                <div className="flex items-center gap-2 mb-4 text-sm text-gray-400">
                   <Phone size={13} className="text-primary-400" />
                   Customer: {s.customer.name} · {s.customer.phone}
                 </div>

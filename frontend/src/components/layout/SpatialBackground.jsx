@@ -41,7 +41,7 @@ export default function SpatialBackground({ role }) {
   }, [role, theme, BACKGROUNDS]);
 
   return (
-    <div className="fixed inset-0 w-full h-full z-[-1] overflow-hidden pointer-events-none bg-gray-50">
+    <div className="fixed inset-0 w-full h-full z-[-1] overflow-hidden pointer-events-none bg-dark-950">
       <AnimatePresence mode="wait">
         <motion.div
           key={currentBg}
@@ -53,7 +53,7 @@ export default function SpatialBackground({ role }) {
           style={{ backgroundImage: `url(${currentBg})` }}
         />
       </AnimatePresence>
-      <div className={`absolute inset-0 ${theme === 'bright' ? 'bg-white/60' : 'bg-white/40'}`} />
+      <div className={`absolute inset-0 ${theme === 'bright' ? 'bg-[#0B0F19]/60' : 'vision-bg-overlay'}`} />
     </div>
   );
 }

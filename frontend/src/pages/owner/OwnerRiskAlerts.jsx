@@ -72,12 +72,12 @@ export default function OwnerRiskAlerts() {
       </div>
 
       {isLoading ? (
-        <div className="text-gray-700">Loading risk alerts...</div>
+        <div className="text-gray-400">Loading risk alerts...</div>
       ) : alerts?.length === 0 ? (
         <div className="glass-card p-12 text-center flex flex-col items-center">
           <CheckCircle size={48} className="text-green-500 mb-4" />
-          <h3 className="text-xl text-gray-900 font-semibold">No Active Risks</h3>
-          <p className="text-gray-700">Your enterprise logistics are running smoothly.</p>
+          <h3 className="text-xl text-white font-semibold">No Active Risks</h3>
+          <p className="text-gray-400">Your enterprise logistics are running smoothly.</p>
         </div>
       ) : (
         <div className="grid gap-4">
@@ -91,12 +91,12 @@ export default function OwnerRiskAlerts() {
                 <div className="flex-1">
                   <div className="flex justify-between items-start">
                     <div>
-                      <h3 className="text-gray-900 font-medium text-lg">
+                      <h3 className="text-white font-medium text-lg">
                         {alert.type.split('_').map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}
                       </h3>
-                      <p className="text-gray-700 mt-1">{alert.message}</p>
+                      <p className="text-gray-400 mt-1">{alert.message}</p>
                       {alert.dueDate && (
-                        <p className="text-sm text-gray-800 mt-2">
+                        <p className="text-sm text-gray-500 mt-2">
                           Due Date: {new Date(alert.dueDate).toLocaleDateString()}
                         </p>
                       )}
@@ -104,7 +104,7 @@ export default function OwnerRiskAlerts() {
                     {alert.status === 'active' && (
                       <button
                         onClick={() => resolveAlert(alert._id)}
-                        className="px-4 py-2 bg-gray-200 hover:bg-dark-700 text-gray-900 text-sm rounded-lg border border-dark-600 transition-colors"
+                        className="px-4 py-2 bg-dark-800 hover:bg-dark-700 text-white text-sm rounded-lg border border-dark-600 transition-colors"
                       >
                         Mark Resolved
                       </button>

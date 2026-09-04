@@ -20,17 +20,17 @@ export default function FloatingBottomNav({ links, basePath }) {
         className="flex items-center px-2 py-2 gap-2 vision-glass rounded-full"
       >
         {/* Left Logo / Home Button */}
-        <Link to="/" className="relative flex items-center justify-center w-12 h-12 rounded-full hover:bg-black/5 transition-colors group">
+        <Link to="/" className="relative flex items-center justify-center w-12 h-12 rounded-full hover:bg-white/5 transition-colors group">
           <div className="w-10 h-10 rounded-full bg-[#1A1D27] flex items-center justify-center">
-            <Truck size={18} strokeWidth={2} className="text-gray-900" />
+            <Truck size={18} strokeWidth={2} className="text-white" />
           </div>
-          <div className="absolute -top-10 px-3 py-1.5 bg-[#1A1D27] text-gray-900 text-xs font-medium rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap shadow-xl border border-black/10">
+          <div className="absolute -top-10 px-3 py-1.5 bg-[#1A1D27] text-white text-xs font-medium rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap shadow-xl border border-white/10">
             Home
           </div>
         </Link>
         
         {/* Separator */}
-        <div className="w-[1px] h-8 bg-black/5 mx-1" />
+        <div className="w-[1px] h-8 bg-white/10 mx-1" />
 
         {/* Dynamic Links */}
         <div className="flex items-center gap-1">
@@ -45,12 +45,12 @@ export default function FloatingBottomNav({ links, basePath }) {
                 {active && (
                   <motion.div
                     layoutId="active-nav-bg"
-                    className="absolute inset-0 bg-black/10 border border-black/10 rounded-[18px] shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]"
+                    className="absolute inset-0 bg-white/15 border border-white/10 rounded-[18px] shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]"
                     transition={{ type: 'spring', damping: 20, stiffness: 300 }}
                   />
                 )}
-                <Icon size={20} strokeWidth={1.5} className={`relative z-10 transition-colors ${active ? 'text-gray-900' : 'text-gray-700 group-hover:text-gray-200'}`} />
-                <div className="absolute -top-10 px-3 py-1.5 bg-[#1A1D27] text-gray-900 text-xs font-medium rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap shadow-xl border border-black/10 z-50">
+                <Icon size={20} strokeWidth={1.5} className={`relative z-10 transition-colors ${active ? 'text-white' : 'text-gray-400 group-hover:text-gray-200'}`} />
+                <div className="absolute -top-10 px-3 py-1.5 bg-[#1A1D27] text-white text-xs font-medium rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap shadow-xl border border-white/10 z-50">
                   {label}
                 </div>
               </Link>
@@ -59,17 +59,17 @@ export default function FloatingBottomNav({ links, basePath }) {
         </div>
 
         {/* Separator */}
-        <div className="w-[1px] h-8 bg-black/5 mx-1" />
+        <div className="w-[1px] h-8 bg-white/10 mx-1" />
 
         {/* Logout Button */}
         <button 
           onClick={() => {
             window.dispatchEvent(new CustomEvent('trigger-logout'));
           }}
-          className="relative flex items-center justify-center w-12 h-12 rounded-full hover:bg-black/5 transition-colors text-gray-700 hover:text-gray-900 group"
+          className="relative flex items-center justify-center w-12 h-12 rounded-full hover:bg-white/5 transition-colors text-gray-400 hover:text-white group"
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
-          <div className="absolute -top-10 px-3 py-1.5 bg-[#1A1D27] text-red-400 text-xs font-medium rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap shadow-xl border border-black/10">
+          <div className="absolute -top-10 px-3 py-1.5 bg-[#1A1D27] text-red-400 text-xs font-medium rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap shadow-xl border border-white/10">
             Sign Out
           </div>
         </button>

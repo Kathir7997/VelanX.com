@@ -21,11 +21,11 @@ export default function DriverDeliveries() {
         <p className="page-subtitle">Your delivery history and records</p>
       </div>
       {isLoading ? (
-        <div className="glass-card p-12 text-center text-gray-800">Loading...</div>
+        <div className="glass-card p-12 text-center text-gray-500">Loading...</div>
       ) : deliveries.length === 0 ? (
         <div className="glass-card p-12 text-center">
           <PackageCheck size={40} className="text-gray-600 mx-auto mb-3" />
-          <p className="text-gray-700">No completed deliveries yet</p>
+          <p className="text-gray-400">No completed deliveries yet</p>
         </div>
       ) : (
         <div className="glass-card overflow-hidden">
@@ -44,8 +44,8 @@ export default function DriverDeliveries() {
               {deliveries.map((s) => (
                 <tr key={s._id}>
                   <td><span className="font-mono text-primary-400 text-xs">{s.trackingNumber}</span></td>
-                  <td className="text-gray-900">{s.materialName}</td>
-                  <td className="text-gray-700 text-xs">{s.pickupAddress?.city} → {s.deliveryAddress?.city}</td>
+                  <td className="text-white">{s.materialName}</td>
+                  <td className="text-gray-400 text-xs">{s.pickupAddress?.city} → {s.deliveryAddress?.city}</td>
                   <td>{s.materialWeight} kg</td>
                   <td>{s.actualDelivery ? format(new Date(s.actualDelivery), 'dd MMM yyyy') : '—'}</td>
                   <td><span className="badge-success flex items-center gap-1 w-fit"><CheckCircle size={11} /> Confirmed</span></td>

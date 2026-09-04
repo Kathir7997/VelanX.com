@@ -9,7 +9,7 @@ import { useAuthStore } from '../../store/authStore';
 const STATUS_OPTIONS = [
   { value: 'active', label: 'Active', color: 'text-green-400', bg: 'bg-green-500/10 border-green-500/30', icon: Activity },
   { value: 'busy', label: 'Busy', color: 'text-yellow-400', bg: 'bg-yellow-500/10 border-yellow-500/30', icon: Clock },
-  { value: 'offline', label: 'Offline', color: 'text-gray-700', bg: 'bg-black/5 border-black/10', icon: WifiOff },
+  { value: 'offline', label: 'Offline', color: 'text-gray-400', bg: 'bg-white/5 border-white/15', icon: WifiOff },
 ];
 
 export default function DriverOverview() {
@@ -60,7 +60,7 @@ export default function DriverOverview() {
 
       {/* Status Control */}
       <div className="glass-card p-6 mb-6">
-        <h2 className="text-gray-900 font-semibold mb-4">Your Status</h2>
+        <h2 className="text-white font-semibold mb-4">Your Status</h2>
         <div className="flex flex-wrap gap-3">
           {STATUS_OPTIONS.map(({ value, label, color, bg, icon: Icon }) => (
             <button
@@ -71,7 +71,7 @@ export default function DriverOverview() {
               className={`flex items-center gap-2.5 px-5 py-3 rounded-xl border font-semibold transition-all duration-200 ${
                 driver?.status === value
                   ? `${bg} ${color} scale-105`
-                  : 'bg-black/5 border-black/10 text-gray-700 hover:border-white/30'
+                  : 'bg-white/5 border-white/15 text-gray-400 hover:border-white/30'
               }`}
             >
               <Icon size={16} />
@@ -81,7 +81,7 @@ export default function DriverOverview() {
           ))}
         </div>
         {driver?.status && (
-          <p className="text-gray-800 text-sm mt-3">Current status: <span className="text-gray-900 font-medium capitalize">{driver.status}</span></p>
+          <p className="text-gray-500 text-sm mt-3">Current status: <span className="text-white font-medium capitalize">{driver.status}</span></p>
         )}
       </div>
 
@@ -99,8 +99,8 @@ export default function DriverOverview() {
               <Icon size={18} className={color} />
             </div>
             <div>
-              <p className="text-2xl font-display font-bold text-gray-900">{value}</p>
-              <p className="text-gray-700 text-sm">{label}</p>
+              <p className="text-2xl font-display font-bold text-white">{value}</p>
+              <p className="text-gray-400 text-sm">{label}</p>
             </div>
           </motion.div>
         ))}
@@ -108,13 +108,13 @@ export default function DriverOverview() {
 
       {/* Current Assignments */}
       <div className="glass-card overflow-hidden">
-        <div className="p-6 border-b border-black/10">
-          <h2 className="text-gray-900 font-semibold">Active Assignments</h2>
+        <div className="p-6 border-b border-white/10">
+          <h2 className="text-white font-semibold">Active Assignments</h2>
         </div>
         {activeAssignments.length === 0 ? (
           <div className="p-12 text-center">
             <Navigation size={40} className="text-gray-600 mx-auto mb-3" />
-            <p className="text-gray-700">No active assignments</p>
+            <p className="text-gray-400">No active assignments</p>
             <p className="text-gray-600 text-sm mt-1">Set your status to Active to receive assignments</p>
           </div>
         ) : (
@@ -123,8 +123,8 @@ export default function DriverOverview() {
               <div key={s._id} className="bg-dark-800/60 rounded-xl p-4 flex items-start justify-between gap-4">
                 <div>
                   <p className="font-mono text-primary-400 text-xs mb-1">{s.trackingNumber}</p>
-                  <p className="text-gray-900 font-medium">{s.materialName}</p>
-                  <p className="text-gray-700 text-sm">{s.pickupAddress?.city} → {s.deliveryAddress?.city}</p>
+                  <p className="text-white font-medium">{s.materialName}</p>
+                  <p className="text-gray-400 text-sm">{s.pickupAddress?.city} → {s.deliveryAddress?.city}</p>
                 </div>
                 <span className="badge-warning">{s.status.replace(/_/g, ' ')}</span>
               </div>

@@ -30,8 +30,8 @@ export default function ManagerOverview() {
           <motion.div key={label} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.07 }} className="stat-card">
             <div className={`w-10 h-10 rounded-xl flex items-center justify-center border ${bg}`}><Icon size={18} className={color} /></div>
             <div>
-              <p className="text-2xl font-display font-bold text-gray-900">{value}</p>
-              <p className="text-gray-700 text-sm">{label}</p>
+              <p className="text-2xl font-display font-bold text-white">{value}</p>
+              <p className="text-gray-400 text-sm">{label}</p>
             </div>
           </motion.div>
         ))}

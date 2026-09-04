@@ -42,8 +42,8 @@ export default function PayrollPage() {
       {showForm && (
         <div className="glass-card p-6 mb-6">
           <div className="flex justify-between items-center mb-4">
-            <h3 className="text-gray-900 font-semibold">New Salary Record</h3>
-            <button onClick={() => { setShowForm(false); reset(); }}><X size={18} className="text-gray-800 hover:text-gray-900" /></button>
+            <h3 className="text-white font-semibold">New Salary Record</h3>
+            <button onClick={() => { setShowForm(false); reset(); }}><X size={18} className="text-gray-500 hover:text-white" /></button>
           </div>
           <form onSubmit={handleSubmit((d) => createMutation.mutate(d))} className="grid md:grid-cols-3 gap-4">
             <div>
@@ -84,17 +84,17 @@ export default function PayrollPage() {
       )}
 
       <div className="glass-card overflow-hidden">
-        {isLoading ? <div className="p-12 text-center text-gray-800">Loading...</div> : (
+        {isLoading ? <div className="p-12 text-center text-gray-500">Loading...</div> : (
           <table className="data-table">
             <thead><tr><th>Employee</th><th>Role</th><th>Month/Year</th><th>Basic</th><th>Net Salary</th><th>Status</th><th>Action</th></tr></thead>
             <tbody>
               {(data || []).map((s) => (
                 <tr key={s._id}>
-                  <td className="text-gray-900">{s.employee?.name}</td>
+                  <td className="text-white">{s.employee?.name}</td>
                   <td className="capitalize">{s.role?.replace('_', ' ')}</td>
                   <td>{MONTHS[s.month - 1]} {s.year}</td>
                   <td>₹{s.basicSalary?.toLocaleString()}</td>
-                  <td className="text-gray-900 font-semibold">₹{s.netSalary?.toLocaleString()}</td>
+                  <td className="text-white font-semibold">₹{s.netSalary?.toLocaleString()}</td>
                   <td><span className={s.paymentStatus === 'paid' ? 'badge-success' : 'badge-warning'}>{s.paymentStatus}</span></td>
                   <td>
                     {s.paymentStatus !== 'paid' && (

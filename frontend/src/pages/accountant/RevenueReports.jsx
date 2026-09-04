@@ -10,7 +10,7 @@ const CustomTooltip = ({ active, payload, label }) => {
   if (active && payload && payload.length) {
     return (
       <div className="glass-card p-3 text-xs">
-        <p className="text-gray-900 font-medium mb-1">{MONTHS[label - 1]}</p>
+        <p className="text-white font-medium mb-1">{MONTHS[label - 1]}</p>
         {payload.map((p) => (
           <p key={p.name} style={{ color: p.color }}>
             {p.name}: ₹{(p.value || 0).toLocaleString()}
@@ -50,16 +50,16 @@ export default function RevenueReports() {
             <TrendingUp size={20} className={color} />
             <div>
               <p className={`text-2xl font-bold ${color}`}>₹{(value || 0).toLocaleString()}</p>
-              <p className="text-gray-700 text-sm">{label}</p>
+              <p className="text-gray-400 text-sm">{label}</p>
             </div>
           </div>
         ))}
       </div>
 
       <div className="glass-card p-6">
-        <h3 className="text-gray-900 font-semibold mb-6">Monthly Revenue vs Expenses</h3>
+        <h3 className="text-white font-semibold mb-6">Monthly Revenue vs Expenses</h3>
         {isLoading ? (
-          <div className="h-64 flex items-center justify-center text-gray-800">Loading chart...</div>
+          <div className="h-64 flex items-center justify-center text-gray-500">Loading chart...</div>
         ) : (
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={chartData} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
